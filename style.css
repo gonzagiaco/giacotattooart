@@ -167,7 +167,7 @@ h1, .ubicacion, .verTrabajos{
 
 #flecha1{
     width: 8vw;
-    opacity: 0;
+    opacity: 1;
 }
 
 #flecha2{
@@ -279,13 +279,13 @@ h1, .ubicacion, .verTrabajos{
 .foto{
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
 }
 
 #aboutTexto{
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
 }
 
 .foto.show, #aboutTexto.show{
@@ -469,7 +469,7 @@ footer {
     overflow: hidden;
 }
 
-footer * {
+footer .mapa, footer .red {
     opacity: 0; 
     transform: translateY(50px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;

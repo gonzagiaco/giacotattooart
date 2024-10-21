@@ -20,7 +20,7 @@ function animateOnScroll() {
         }
     });
 
-    const footerElements = document.querySelectorAll("footer *");
+    const footerElements = document.querySelectorAll("footer .mapa, footer .red");
     const footer = document.querySelector("footer");
     footerElements.forEach((element, index) => {
         const triggerPoint = window.scrollY + window.innerHeight;

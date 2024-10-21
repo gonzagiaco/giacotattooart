@@ -52,31 +52,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function opacityFlecha() {
         setTimeout(() => {
-            flecha1.style.opacity = "1";
+            flecha3.style.opacity = "0";
         }, 0);
 
         setTimeout(() => {
-            flecha2.style.opacity = "1";
-        }, 500);
-
-        setTimeout(() => {
-            flecha3.style.opacity = "1";
-        }, 1000);
-
-        setTimeout(() => {
-            flecha3.style.opacity = "0";
-        }, 2000);
-
-        setTimeout(() => {
             flecha2.style.opacity = "0";
-        }, 2500);
+        }, 300);
 
         setTimeout(() => {
             flecha1.style.opacity = "0";
-        }, 3000);
+        }, 500);
+
+        setTimeout(() => {
+            flecha1.style.opacity = "1";
+        }, 1500);
+
+        setTimeout(() => {
+            flecha2.style.opacity = "1";
+        }, 2000);
+
+        setTimeout(() => {
+            flecha3.style.opacity = "1";
+        }, 2500);
     }
 
-    setInterval(opacityFlecha, 4000);
+    window.onload = function () {
+        setTimeout(() => {
+            opacityFlecha();
+            setInterval(opacityFlecha, 3000);
+        }, 500);
+    };
 
     const headersFaq = document.querySelectorAll(".headerFaq");
 

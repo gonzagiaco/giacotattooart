@@ -45,7 +45,7 @@ function animateOnScroll() {
         const aboutTexto = document.querySelector("#aboutTexto");
         const triggerPoint = window.scrollY + window.innerHeight;
 
-        if(triggerPoint > foto.offsetTop){
+        if(triggerPoint > aboutTexto.offsetTop){
             setTimeout(() => {
                 foto.classList.add("show");
             }, 100);
