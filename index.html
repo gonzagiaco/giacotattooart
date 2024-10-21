@@ -17,15 +17,31 @@
         <div class="logo">
             <a href="">GIACOTATTOOART</a>
         </div>
-        <div class="menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="46" viewBox="0 0 45 46" fill="none">
+        <div class="menu" id="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="46" viewBox="0 0 45 46" fill="none"
+                class="menu-icon">
                 <path
                     d="M5.625 34.25V30.5H39.375V34.25H5.625ZM5.625 24.875V21.125H39.375V24.875H5.625ZM5.625 15.5V11.75H39.375V15.5H5.625Z"
                     fill="#F2F1CE" />
             </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="46" viewBox="0 0 45 46" fill="none"
+                class="close-icon">
+                <path d=" M11 11L34 34M34 11L11 34" stroke="#F2F1CE" stroke-width="3" />
+            </svg>
         </div>
     </header>
+    <nav id="nav">
+        <a href="">Galeria</a>
+        <a href="">Sobre mí</a>
+        <a href="">Testimonios</a>
+        <a href="">FAQS</a>
+    </nav>
+
     <div class="seccionPrincipal">
+        <video autoplay muted loop id="background-video">
+            <source src="./images/inicio.mp4" type="video/mp4">
+        </video>
+        <div class="overlayInicio"></div>
         <h1>GIACOTATTOOART</h1>
         <div class="ubicacion">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -47,7 +63,10 @@
         </div>
         <div class="verTrabajos">
             <p>Ver trabajos</p>
-            <img src="images/flecha.svg" alt="">
+            <img src="images/flecha.svg" id="flecha1" alt="">
+            <img src="images/flecha.svg" id="flecha2" alt="">
+            <img src="images/flecha.svg" id="flecha3" alt="">
+
         </div>
         <div class="botonWhatsapp">
             <img src="images/whatsapp.svg" alt="">
@@ -102,13 +121,12 @@
                     <p>Franco Giacomino</p>
                 </div>
                 <div class="cuerpoTestimonio">
-                    <p>Hacerme este tatuaje fue una experiencia increíble. El artista capturó exactamente lo que quería y lo llevó a otro nivel. ¡No podría estar más feliz con el resultado!</p>
+                    <p>Hacerme este tatuaje fue una experiencia increíble. El artista capturó exactamente lo que quería
+                        y lo llevó a otro nivel. ¡No podría estar más feliz con el resultado!</p>
                 </div>
                 <div class="footerTestimonio">
                     <p>20/10/2024</p>
-                    <div id="verTatuaje">
-                        <p>Ver tatuaje</p>
-                    </div>
+                    <img src="images/tattoo1.png" alt="">
                 </div>
             </div>
             <div class="testimonio">
@@ -117,13 +135,12 @@
                     <p>Franco Giacomino</p>
                 </div>
                 <div class="cuerpoTestimonio">
-                    <p>Hacerme este tatuaje fue una experiencia increíble. El artista capturó exactamente lo que quería y lo llevó a otro nivel. ¡No podría estar más feliz con el resultado!</p>
+                    <p>Hacerme este tatuaje fue una experiencia increíble. El artista capturó exactamente lo que quería
+                        y lo llevó a otro nivel. ¡No podría estar más feliz con el resultado!</p>
                 </div>
                 <div class="footerTestimonio">
                     <p>20/10/2024</p>
-                    <div id="verTatuaje">
-                        <p>Ver tatuaje</p>
-                    </div>
+                    <img src="images/tattoo3.png" alt="">
                 </div>
             </div>
             <div class="testimonio">
@@ -132,13 +149,12 @@
                     <p>Franco Giacomino</p>
                 </div>
                 <div class="cuerpoTestimonio">
-                    <p>Hacerme este tatuaje fue una experiencia increíble. El artista capturó exactamente lo que quería y lo llevó a otro nivel. ¡No podría estar más feliz con el resultado!</p>
+                    <p>Hacerme este tatuaje fue una experiencia increíble. El artista capturó exactamente lo que quería
+                        y lo llevó a otro nivel. ¡No podría estar más feliz con el resultado!</p>
                 </div>
                 <div class="footerTestimonio">
                     <p>20/10/2024</p>
-                    <div id="verTatuaje">
-                        <p>Ver tatuaje</p>
-                    </div>
+                    <img src="images/tattoo2.png" alt="">
                 </div>
             </div>
         </div>
@@ -148,7 +164,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Duele hacerse un tatuaje?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -158,7 +174,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Qué cuidados debo tener después de hacerme un tatuaje?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -168,7 +184,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Cuánto tiempo tardaré en sanar?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -178,7 +194,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Puedo traer una idea para mi tatuaje?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -188,7 +204,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Cómo puedo reservar una cita?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -198,7 +214,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Qué métodos de pago aceptas?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -208,7 +224,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Hacéis retoques de tatuajes antiguos?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -218,7 +234,7 @@
         <div class="faq">
             <div class="headerFaq">
                 <p>¿Puedo ver ejemplos de tu trabajo?</p>
-                <img src="images/plus-circle.svg" alt="">
+                <img src="images/plus-circle.svg" class="faq-icon" alt="">
             </div>
             <div class="faqExtendida">
                 <p>La sensación varía según la ubicación del tatuaje y la tolerancia al dolor de cada persona. La
@@ -226,10 +242,12 @@
             </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.353402915147!2d-60.33519162480949!3d-36.90581388269437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959445b3602b60c1%3A0xef0739010d9b0acb!2sEspa%C3%B1a%20%26%20Ram%C3%B3n%20Rendon%2C%20B7400%20Olavarr%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1729465570872!5m2!1ses!2sar"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.353402915147!2d-60.33519162480949!3d-36.90581388269437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959445b3602b60c1%3A0xef0739010d9b0acb!2sEspa%C3%B1a%20%26%20Ram%C3%B3n%20Rendon%2C%20B7400%20Olavarr%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1729465570872!5m2!1ses!2sar"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="redes">
             <div class="red">
@@ -240,6 +258,7 @@
             </div>
         </div>
     </footer>
+    <script src="app.js"></script>
 </body>
 
 </html>
