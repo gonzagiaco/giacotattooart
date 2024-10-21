@@ -108,8 +108,8 @@ header {
     flex-wrap: wrap;
 }
 
-@media (max-width: 400px){
-    .galeria img{
+@media (max-width: 400px) {
+    .galeria img {
         width: 8rem !important;
         height: 8rem !important;
     }
@@ -124,7 +124,7 @@ header {
     transition: width 0.3s ease, height 0.3s ease;
 }
 
-.seccionAbout{
+.seccionAbout {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -133,14 +133,14 @@ header {
     background-color: var(--principal);
 }
 
-.foto img{
+.foto img {
     width: 13em;
     height: 13em;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.foto{
+.foto {
     display: flex;
     justify-self: flex-start;
     position: relative;
@@ -149,10 +149,10 @@ header {
     margin-bottom: 40px;
 }
 
-.foto p{
+.foto p {
     background-color: var(--principal);
     position: absolute;
-    right: -2em;
+    right: -4em;
     background-color: var(--Principal2);
     top: 50%;
     transform: translateY(-50%);
@@ -162,18 +162,18 @@ header {
     font-weight: 500;
 }
 
-#aboutTexto{
+#aboutTexto {
     font-size: 1.4rem;
     margin-bottom: 40px;
 }
 
-.contadores{
+.contadores {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.contador{
+.contador {
     display: flex;
     gap: 0.5em;
     flex-direction: column;
@@ -181,23 +181,23 @@ header {
     text-align: center;
 }
 
-.seccionFaqs{
+.seccionFaqs {
     width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: var(--blanco);
+    background-color: #131313;
 }
 
-.seccionFaqs h3{
-    color: var(--principal);
+
+.seccionFaqs h3 {
     font-size: 1.5em;
     font-weight: 500;
     margin-bottom: 40px;
 }
 
-.faq{
+.faq {
     width: 100%;
     height: fit-content;
     background-color: var(--principal);
@@ -206,18 +206,100 @@ header {
     margin-bottom: 20px;
 }
 
-.headerFaq{
+.headerFaq {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.faqExtendida{
+.faqExtendida {
     display: none;
     padding-top: 10px;
 }
 
-footer{
+.seccionTestimonios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    padding: 30px;
+}
+
+.seccionTestimonios h4 {
+    color: var(--Principal2);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.carruselTestimonios {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    align-items: stretch;
+}
+
+.testimonio {
+    min-width: calc(100% - 20vw);
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--principal);
+    flex: 1;
+    border-radius: 10px;
+}
+
+.testimonio:last-child {
+    margin-right: 0;
+}
+
+.headerTestimonio {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    min-height: 4em;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #292938;
+    margin-bottom: 20px;
+}
+
+.footerTestimonio{
+    border-top: 1px solid #292938;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+#verTatuaje{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Principal2);
+    padding: 0.8em;
+    text-align: start;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+
+
+.headerTestimonio img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+footer {
     width: 100%;
     height: fit-content;
     min-height: fit-content;
@@ -229,20 +311,20 @@ footer{
     justify-content: center;
 }
 
-.redes{
+.redes {
     margin-top: 40px;
     margin-bottom: 10vh;
     display: flex;
     flex-direction: column;
 }
 
-.red a{
+.red a {
     display: flex;
     align-items: center;
     gap: 0.5em;
 }
 
-.mapa{
+.mapa {
     border-radius: 15px;
     height: 300px;
     overflow: hidden;
