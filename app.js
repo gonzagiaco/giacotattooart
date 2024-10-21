@@ -54,7 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    linksNav.forEach(link => {
+    const linksHeader = document.querySelectorAll("header a");
+    linksHeader.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
 
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             closeIcon.style.display = "none";
 
             // Ocultar enlaces
-            linksNav.forEach((link, index) => {
+            linksHeader.forEach((link, index) => {
                 link.classList.remove('show');
             });
             
