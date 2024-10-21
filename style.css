@@ -182,7 +182,7 @@ h1, .ubicacion, .verTrabajos{
 
 .botonWhatsapp {
     position: fixed;
-    bottom: 2em;
+    bottom: 50px;
     display: flex;
     align-items: center;
     gap: 1.5vw;
@@ -229,12 +229,12 @@ h1, .ubicacion, .verTrabajos{
     border-radius: 10px;
     transition: opacity 0.3s ease-in, transform 0.5s ease-in, width 0.3s ease, height 0.3s ease;
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateY(50px);
 }
 
 .galeria img.image-visible {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateY(0px);
 
 }
 
@@ -276,15 +276,35 @@ h1, .ubicacion, .verTrabajos{
     font-weight: 500;
 }
 
+.foto{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+#aboutTexto{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.foto.show, #aboutTexto.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
 #aboutTexto {
     font-size: 1.4rem;
     margin-bottom: 40px;
 }
 
 .contadores {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .contador {
@@ -318,6 +338,14 @@ h1, .ubicacion, .verTrabajos{
     padding: 0.5em 0.8em;
     border-radius: 10px;
     margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.faq.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .headerFaq {
@@ -438,7 +466,20 @@ footer {
     padding: 30px;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
+
+footer * {
+    opacity: 0; 
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+footer .show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 .redes {
     margin-top: 40px;
