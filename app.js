@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const linksNav = nav.querySelectorAll("a");
 
     if (menuToggle && nav) {
+        // Toggle del menú al hacer clic en el botón
         menuToggle.addEventListener("click", function () {
             nav.classList.toggle("show");
             header.classList.toggle("open");
@@ -31,7 +32,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         });
+
+        // Agregar un listener para cerrar el menú al hacer clic fuera de los enlaces
+        nav.addEventListener("click", function (event) {
+            // Verificar si el clic no es en un enlace
+            if (!event.target.closest('a')) {
+                nav.classList.remove("show");
+                header.classList.remove("open");
+
+                // Ocultar iconos
+                const menuIcon = menuToggle.querySelector(".menu-icon");
+                const closeIcon = menuToggle.querySelector(".close-icon");
+                menuIcon.style.display = "block";
+                closeIcon.style.display = "none";
+
+                // Ocultar enlaces
+                linksNav.forEach((link, index) => {
+                    link.classList.remove('show');
+                });
+            }
+        });
     }
+
+    linksNav.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            
+            // Calcular la posición de desplazamiento
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = targetPosition - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+
+            // Hacer scroll suave
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
 
     const btn_whatsapp = document.querySelector(".botonWhatsapp");
 
@@ -87,27 +127,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     headersFaq.forEach(header => {
         header.addEventListener("click", function () {
-
             const faqExtendida = header.nextElementSibling;
             const icon = header.querySelector(".faq-icon");
 
             const isOpen = faqExtendida.classList.contains("faqExtendida-show");
 
-
             faqExtendida.classList.toggle("faqExtendida-show");
 
             if (!isOpen) {
-       
                 const contentHeight = faqExtendida.scrollHeight; 
                 const paddingTop = 10;
                 faqExtendida.style.maxHeight = `${contentHeight + paddingTop}px`; 
                 icon.src = "images/minus-circle.svg";
             } else {
-      
                 faqExtendida.style.maxHeight = `0`;
                 icon.src = "images/plus-circle.svg";
             }
         });
     });
-
 });
