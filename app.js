@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const closeIcon = menuToggle.querySelector(".close-icon");
 
             if (nav.classList.contains("show")) {
-                menuIcon.style.display = "none"; 
-                closeIcon.style.display = "block"; 
+                menuIcon.style.display = "none";
+                closeIcon.style.display = "block";
 
                 linksNav.forEach((link, index) => {
-                    link.style.transitionDelay = `${index * 0.2}s`; 
+                    link.style.transitionDelay = `${index * 0.2}s`;
                     link.classList.add('show');
                 });
             } else {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Desaparece cada enlace en orden
                 linksNav.forEach((link, index) => {
-                    link.style.transitionDelay = `${index * 0.2}s`; 
+                    link.style.transitionDelay = `${index * 0.2}s`;
                     link.classList.remove('show');
                 });
             }
@@ -55,11 +55,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     linksNav.forEach(link => {
-        link.addEventListener("click", function(e) {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
 
             const targetId = this.getAttribute("href");
             const targetElement = document.querySelector(targetId);
+            // Ocultar iconos
+            const menuIcon = menuToggle.querySelector(".menu-icon");
+            const closeIcon = menuToggle.querySelector(".close-icon");
+            nav.classList.remove("show");
+            header.classList.remove("open");
+            menuIcon.style.display = "block";
+            closeIcon.style.display = "none";
+
+            // Ocultar enlaces
+            linksNav.forEach((link, index) => {
+                link.classList.remove('show');
+            });
             
             // Calcular la posición de desplazamiento
             const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
@@ -135,9 +147,9 @@ document.addEventListener("DOMContentLoaded", function () {
             faqExtendida.classList.toggle("faqExtendida-show");
 
             if (!isOpen) {
-                const contentHeight = faqExtendida.scrollHeight; 
+                const contentHeight = faqExtendida.scrollHeight;
                 const paddingTop = 10;
-                faqExtendida.style.maxHeight = `${contentHeight + paddingTop}px`; 
+                faqExtendida.style.maxHeight = `${contentHeight + paddingTop}px`;
                 icon.src = "images/minus-circle.svg";
             } else {
                 faqExtendida.style.maxHeight = `0`;
