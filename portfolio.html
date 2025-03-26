@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="container-loader">
+        <p>GIACOTATTOOART</p>
+        <div class="progress-loader">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <header data-animacion="slide-left">
+
+        <nav class="desktop-nav-portfolio">
+            <ul>
+                <li><a href="index.html" style="display: flex; align-items: center;"><img src="media/back.svg"
+                            style="width: 20px; margin-right: 5px;" alt="">Back</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="index.html#booking">Booking</a></li>
+                <li><a href="index.html#faqs">Faqs</a></li>
+                <li><a href="#" style="display: flex; align-items: center;"><img src="media/change.svg"
+                            style="margin-right: 5px;" alt="">Change to spanish</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container-portfolio">
+        <div id="portfolio">
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <video src="media/tattoos/tattoo2.mp4" autoplay muted loop data-type="video" class="image-portfolio"
+                    alt="Tatuaje 1"></video>
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/resource1.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+            <div class="image-container">
+                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy" class="image-portfolio" alt="Tatuaje 1">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+        <div id="lightbox-content">
+            <!-- Aquí se cargará la imagen o el video -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-izq" data-animacion="slide-up">
+            <div class="footer-izq-content">
+                <p>GIACOTATTOOART</p>
+                <div class="social">
+                    <img src="media/ig.svg" alt="">
+                    <img src="media/tiktok.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer-der" data-animacion="slide-up">
+            <nav class="desktop-nav-footer">
+                <p>Menu</p>
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="#booking">Book an appointment</a></li>
+                    <li><a href="#faqs">Faqs</a></li>
+                    <li><img src="media/change.svg" id="change-footer" alt=""><a href="#">Change to spanish</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </footer>
+
+    <script src="js/portfolio.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
