@@ -39,6 +39,7 @@ header {
     /* Comienza desplazado a la izquierda */
     transition: opacity 0.6s ease, transform 0.6s ease;
     /* La transición debe ser para ambos */
+    z-index: 9999;
 }
 
 /* Estado final cuando se activa la animación */
@@ -280,7 +281,7 @@ h2.visible {
 }
 
 .swiper-slide {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
 
@@ -792,7 +793,7 @@ footer p:nth-child(1) {
 
 /* From Uiverse.io by mrhyddenn */
 .progress-loader {
-    
+
     scale: 1.1;
 }
 
@@ -843,27 +844,30 @@ footer p:nth-child(1) {
     letter-spacing: 1em;
 }
 
-#menu-btn{
+#menu-btn {
     display: none;
 }
 
 .mobile-break::after {
-    content: "\A"; /* \A representa un salto de línea */
-    white-space: pre; /* Permite que el \A se interprete como un salto de línea */
-    display: none; /* Oculto por defecto */
+    content: "\A";
+    /* \A representa un salto de línea */
+    white-space: pre;
+    /* Permite que el \A se interprete como un salto de línea */
+    display: none;
+    /* Oculto por defecto */
 }
 
-.scroll{
+.scroll {
     display: none;
 }
 
-.header-logo{
+.header-logo {
     display: none;
 }
 
 @media screen and (max-width: 480px) {
 
-    header{
+    header {
         position: fixed;
         top: 0;
         left: 0;
@@ -875,8 +879,8 @@ footer p:nth-child(1) {
         background-color: #0C0C0C;
     }
 
-    .header-logo{
-        color:white;
+    .header-logo {
+        color: white;
         font-size: 1.3em;
         display: block;
     }
@@ -885,7 +889,7 @@ footer p:nth-child(1) {
         display: inline;
     }
 
-    .hero-logo{
+    .hero-logo {
         font-size: 2.5em;
     }
 
@@ -894,16 +898,14 @@ footer p:nth-child(1) {
         font-size: 1.5em;
     }
 
-    #hero-text{
-    }
 
-    .hero-btn{
+    .hero-btn {
         position: absolute;
         top: 70%;
         padding: 2% 30%;
     }
 
-    .scroll{
+    .scroll {
         display: flex;
         align-items: center;
         gap: 5px;
@@ -914,12 +916,12 @@ footer p:nth-child(1) {
         transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
-    .scroll.visible{
+    .scroll.visible {
         opacity: 1;
         transform: translateX(0);
     }
 
-    .hero-btn-resource{
+    .hero-btn-resource {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -929,13 +931,13 @@ footer p:nth-child(1) {
         height: 30%;
     }
 
-    #menu-btn{
+    #menu-btn {
         display: block;
         filter: brightness(0) invert(1);
 
     }
 
-    .desktop-nav{
+    .desktop-nav {
         display: none;
     }
 
@@ -945,22 +947,23 @@ footer p:nth-child(1) {
         letter-spacing: 0.4em;
     }
 
-    #hero-video{
+    #hero-video {
         display: none;
     }
 
-    .hero{
+    .hero {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100vh;
         overflow: hidden;
+        position: relative;
         padding: 5%;
         gap: 20px;
     }
 
-    #resource2{
+    #resource2 {
         display: none;
     }
 
@@ -973,52 +976,79 @@ footer p:nth-child(1) {
         animation: rotate 60s infinite linear;
         transform: translate(-50%, -50%) rotate(0deg);
         /* Rotación continua */
-        transition: opacity 0.6s ease;
-        opacity: 1;
+        transition: opacity 1s ease;
+        opacity: 0;
         width: calc(100% + 100px);
     }
-    
+
     #resource1.visible {
         opacity: 1;
     }
-    
-    
+
+
     #resource2.visible {
         opacity: 1;
     }
-    
+
     @keyframes rotate {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
     }
 
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
+    /* GALLERY SECTION */
 
     .gallery{
+        align-items: center;
+        gap: 30px;
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: 4em;
+        letter-spacing: 0.4em;
+        margin-bottom: 10%;
+        margin-top: 10%;
+        width: 100%;
+        text-align: center;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+        opacity: 0;
+        
+    }
+
+    .gallery-tattoo{
+        width: 160px;
+        height: 160px;
+    }
+
+    .swiper-buttons{
         display: none;
     }
 
-    .container-booking{
+    /* BOOKING SECTION */
+
+    .container-booking {
+    }
+
+    .container-faq {
         display: none;
     }
 
-    .container-faq{
+    footer {
         display: none;
     }
 
-    footer{
-        display: none;
-    }
-
-    .container-w-left{
+    .container-w-left {
         width: 100%;
         padding: 0;
     }
 
-    .container-w-right{
+    .container-w-right {
         display: none;
     }
 

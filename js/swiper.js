@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper(".swiper", {
-    grid: {
-      rows: 2, // Número de filas
-      fill: "row", // Cómo se llenan (puede ser "row" o "column")
-    },
-    slidesPerView: 3, // Número de columnas visibles
-    spaceBetween: 30, // Espacio entre slides
+    spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -14,9 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      0: { // Se aplica en cualquier pantalla menor a 480px
+        slidesPerView: 2,
+        grid: {
+          rows: 3,
+          fill: "row",
+        }
+      },
+      481: { // Se aplica en pantallas mayores a 480px
+        slidesPerView: 3,
+        grid: {
+          rows: 2,
+          fill: "row",
+        }
+      }
+    }
   });
-
-
-
-  
 });
