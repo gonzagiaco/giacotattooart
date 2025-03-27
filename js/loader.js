@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let width = parseInt(localStorage.getItem("progress") || "0");
 
+    // Comprobar si es la primera vez que se carga la página o portfolio
+    if (!sessionStorage.getItem("loaderShown")) {
+        // Es la primera vez, mostrar loader
+        sessionStorage.setItem("loaderShown", "true");
+    } else if (sessionStorage.getItem("loaderShown") === "portfolio") {
+        // El loader ya ha sido mostrado, pero estamos en portfolio por primera vez
+        sessionStorage.setItem("loaderShown", "true");
+    }
+
     function finalizarCarga() {
         body.style.overflow = "auto";
         containerLoader.style.display = "none";
@@ -25,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         elementos.forEach(elemento => observer.observe(elemento));
     }
 
+    // Cargar progreso de la barra
     if (width >= 100) {
         finalizarCarga();
     } else {
@@ -49,4 +59,11 @@ document.addEventListener("DOMContentLoaded", function() {
             finalizarCarga();
         }
     });
+
+    // Detectar si estamos en la página de portfolio y mostrar loader
+    if (window.location.pathname.includes("portfolio.html") && sessionStorage.getItem("loaderShown") !== "portfolio") {
+        sessionStorage.setItem("loaderShown", "portfolio");
+        containerLoader.style.display = "block"; // Mostrar loader al entrar a portfolio por primera vez
+        setTimeout(finalizarCarga, 500); // Simulación de la duración de la carga
+    }
 });
