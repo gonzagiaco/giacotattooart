@@ -2,26 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const progressBar = document.querySelector(".progress");
     const containerLoader = document.querySelector(".container-loader");
     const body = document.querySelector("body");
+    const heroVideo = document.getElementById("hero-video");
 
     let width = parseInt(localStorage.getItem("progress") || "0");
 
-    if (width >= 100) {
+    function finalizarCarga() {
         body.style.overflow = "auto";
         containerLoader.style.display = "none";
-        iniciarAnimaciones(); // Iniciar animaciones si ya cargó previamente
-    } else {
-        const interval = setInterval(() => {
-            if (width >= 100) {
-                clearInterval(interval);
-                body.style.overflow = "auto";
-                containerLoader.style.display = "none";
-                setTimeout(iniciarAnimaciones, 100); // Llamar después de que se oculte el loader
-            } else {
-                width++;
-                progressBar.style.width = width + "%";
-                localStorage.setItem("progress", width);
-            }
-        }, 50);
+        setTimeout(iniciarAnimaciones, 100);
     }
 
     function iniciarAnimaciones() {
@@ -36,4 +24,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
         elementos.forEach(elemento => observer.observe(elemento));
     }
+
+    if (width >= 100) {
+        finalizarCarga();
+    } else {
+        const interval = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(interval);
+                if (heroVideo.readyState >= 3) {
+                    finalizarCarga();
+                } else {
+                    heroVideo.addEventListener("canplaythrough", finalizarCarga);
+                }
+            } else {
+                width++;
+                progressBar.style.width = width + "%";
+                localStorage.setItem("progress", width);
+            }
+        }, 50);
+    }
+
+    heroVideo.addEventListener("canplaythrough", function() {
+        if (width >= 100) {
+            finalizarCarga();
+        }
+    });
 });

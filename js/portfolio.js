@@ -66,4 +66,35 @@ document.addEventListener('DOMContentLoaded', function () {
             lightbox.style.display = 'none';
         }
     });
+
+
+    document.getElementById("descargar-pdf").addEventListener("click", async function () {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF("p", "mm", "a4"); // Formato A4 vertical
+
+        const portfolio = document.getElementById("portfolio");
+        const elements = portfolio.querySelectorAll(".image-container");
+
+        let y = 10; // Posición inicial en el PDF
+
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            let canvas = await html2canvas(element, { scale: 3, useCORS: true });
+
+            let imgData = canvas.toDataURL("image/jpeg", 1.0);
+            let imgWidth = 150; // Ancho fijo en mm (A4)
+            let imgHeight = (canvas.height / canvas.width) * imgWidth; // Mantener proporción
+
+            if (y + imgHeight > 280) { // Si la imagen no cabe, agrega nueva página
+                pdf.addPage();
+                y = 10;
+            }
+
+            pdf.addImage(imgData, "JPEG", 10, y, imgWidth, imgHeight);
+            y += imgHeight + 5; // Espacio entre imágenes
+        }
+
+        pdf.save("Portfolio_Tatuajes_HD.pdf");
+    });
+
 });

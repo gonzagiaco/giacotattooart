@@ -22,6 +22,7 @@
 
 body {
     overflow: hidden;
+    background-color: #0C0C0C;
 }
 
 :root {
@@ -67,6 +68,10 @@ header.visible {
     gap: 5px;
 }
 
+#menu-social{
+    display: none;
+}
+
 .desktop-nav a {
     color: rgb(0, 0, 0);
     transition: color 0.2s ease;
@@ -77,6 +82,7 @@ header.visible {
 
 .container-white {
     display: flex;
+    background-color: white;
 }
 
 .container-w-left {
@@ -182,7 +188,7 @@ header.visible {
     top: 20%;
     left: -420px;
     object-fit: cover;
-    z-index: -1;
+    z-index: 0;
 }
 
 #resource2 {
@@ -190,7 +196,7 @@ header.visible {
     top: -5%;
     right: -7%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 0;
 }
 
 .hero-logo {
@@ -225,6 +231,7 @@ h1 {
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease;
+    z-index: 1;
 }
 
 .hero-btn.visible {
@@ -246,6 +253,7 @@ h1 {
     align-items: start;
     justify-content: start;
     flex-direction: column;
+    padding: 5%;
 }
 
 h2 {
@@ -346,6 +354,11 @@ h2.visible {
     background-color: #0C0C0C;
     padding: 5%;
     color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    justify-content: space-evenly;
 }
 
 .booking-info {
@@ -549,10 +562,14 @@ footer {
     color: white;
 }
 
-footer p:nth-child(1) {
+
+#footer-title-desktop {
     font-size: 4em;
     letter-spacing: 0.4em;
+}
 
+#footer-title-mobile {
+    display: none;
 }
 
 .desktop-nav-footer p:nth-child(1) {
@@ -624,6 +641,52 @@ footer p:nth-child(1) {
 }
 
 /* PORTFOLIO SECTION */
+
+@media print {
+    body {
+        background: white;
+        color: black;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ocultar elementos innecesarios en la impresión */
+    .container-loader,
+    .lightbox,
+    button#descargar-pdf,
+    .desktop-nav-portfolio,
+    .desktop-nav-footer,
+    footer {
+        display: none !important;
+    }
+
+    /* Ajustar el contenido para que se imprima correctamente */
+    .container-portfolio {
+        width: 100%;
+        padding: 0 !important;
+        height: fit-content !important;
+    }
+
+    /* Asegurar que las imágenes mantengan su tamaño */
+    .image-container {
+        page-break-inside: avoid;
+        /* Evitar que las imágenes se corten */
+        margin-bottom: 10px;
+    }
+
+    .image-container img,
+    .image-container video {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+
+    /* Evitar saltos de página entre imágenes seguidas */
+    .image-container:nth-child(odd) {
+        page-break-after: avoid;
+    }
+}
+
 
 .container-portfolio {
     height: fit-content;
@@ -784,6 +847,8 @@ footer p:nth-child(1) {
     gap: 5px;
 }
 
+
+
 .desktop-nav-portfolio a {
     color: rgb(0, 0, 0);
     transition: color 0.2s ease;
@@ -844,7 +909,7 @@ footer p:nth-child(1) {
     letter-spacing: 1em;
 }
 
-#menu-btn {
+.hamburger {
     display: none;
 }
 
@@ -878,6 +943,121 @@ footer p:nth-child(1) {
         align-items: center;
         background-color: #0C0C0C;
     }
+
+    .hamburger {
+        cursor: pointer;
+        display: block;
+      }
+      
+      .hamburger input {
+        display: none;
+      }
+      
+      .hamburger svg {
+        /* The size of the SVG defines the overall size */
+        height: 2.5em;
+        /* Define the transition for transforming the SVG */
+        transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .line {
+        fill: none;
+        stroke: white;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3;
+        /* Define the transition for transforming the Stroke */
+        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .line-top-bottom {
+        stroke-dasharray: 12 63;
+      }
+      
+      .hamburger input:checked + svg {
+        transform: rotate(-45deg);
+      }
+      
+      .hamburger input:checked + svg .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+      }
+      
+
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        left: 0;
+        position: fixed;
+        background-color: rgb(255, 255, 255);
+        top: -100%;
+        z-index: -1;
+        transition: all 0.6s ease;
+    }
+
+    .desktop-nav.opened {
+        top: 0;
+        z-index: 9998;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    #menu-social{
+        display: block;
+    }
+
+    .desktop-nav li {
+        opacity: 0;
+        /* Inicia invisible */
+        transform: translateY(20px);
+        /* Comienza desde abajo */
+        animation: fadeInUp 0.3s forwards;
+        /* Aplicamos la animación */
+    }
+
+    .desktop-nav li:nth-child(1) {
+        animation-delay: 0.2s;
+        /* Primer elemento aparece con un retraso de 0.2s */
+    }
+
+    .desktop-nav li:nth-child(2) {
+        animation-delay: 0.4s;
+        /* Segundo elemento con 0.4s de retraso */
+    }
+
+    .desktop-nav li:nth-child(3) {
+        animation-delay: 0.6s;
+        /* Tercer elemento con 0.6s de retraso */
+    }
+
+    .desktop-nav li:nth-child(4) {
+        animation-delay: 0.8s;
+        /* Cuarto elemento con 0.8s de retraso */
+    }
+
+    .desktop-nav li:nth-child(5) {
+        animation-delay: 1s;
+        /* Cuarto elemento con 0.8s de retraso */
+    }
+
+    /* Definimos la animación */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 
     .header-logo {
         color: white;
@@ -937,9 +1117,9 @@ footer p:nth-child(1) {
 
     }
 
-    .desktop-nav {
-        display: none;
-    }
+
+
+
 
     .container-loader p {
         transform: translateY(0px);
@@ -1002,14 +1182,14 @@ footer p:nth-child(1) {
 
     /* GALLERY SECTION */
 
-    .gallery{
+    .gallery {
         align-items: center;
         gap: 30px;
     }
 
     h2 {
         font-weight: normal;
-        font-size: 4em;
+        font-size: 13vw;
         letter-spacing: 0.4em;
         margin-bottom: 10%;
         margin-top: 10%;
@@ -1018,29 +1198,111 @@ footer p:nth-child(1) {
         transform: translateY(50px);
         transition: all 0.6s ease;
         opacity: 0;
-        
+
     }
 
-    .gallery-tattoo{
+    .gallery-tattoo {
         width: 160px;
         height: 160px;
     }
 
-    .swiper-buttons{
+    .swiper-buttons {
         display: none;
     }
 
     /* BOOKING SECTION */
 
-    .container-booking {
+
+    .booking-info {
+        margin-left: 0%;
+    }
+
+    .booking-info p:nth-child(1) {
+        margin-bottom: 5%;
+    }
+
+
+
+    .card-info {
+        width: 100%;
+        margin-bottom: 8%;
+    }
+
+    .extra {
+        margin-bottom: 8%;
+    }
+
+    #btn-book {
+        width: 100%;
+    }
+
+
+
+    h3 {
+        font-weight: normal;
+        font-size: 13vw;
+        letter-spacing: 0.4em;
+        margin-bottom: 10%;
+        margin-top: 10%;
+        width: 100%;
+        text-align: center;
+        transform: translateY(50px);
+        transition: all 0.6s ease;
+        opacity: 0;
+        display: inline-block;
+    }
+
+    h3:nth-child(1) {
+        margin-bottom: 10%;
     }
 
     .container-faq {
-        display: none;
+        gap: 2em;
+        height: fit-content;
+        padding-bottom: 40%;
+    }
+
+    #arrow-down {
+        width: 20px;
+    }
+
+    .faqs {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-card {
+        margin-bottom: 2%;
+        gap: 5px;
+        font-size: 1.4em;
     }
 
     footer {
+        flex-direction: column;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .footer-der {
+        width: 100%;
+    }
+
+    .footer-izq-content {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .social {
+        position: inherit;
+    }
+
+    #footer-title-desktop {
         display: none;
+    }
+
+    #footer-title-mobile {
+        display: block;
+        font-size: 13vw;
     }
 
     .container-w-left {
