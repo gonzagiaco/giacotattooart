@@ -85,14 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
     
     bookingLink.addEventListener("click", function (event) {
         event.preventDefault();
-        const isMobile = window.innerWidth <= 768;
+        const isMobile = window.innerWidth <= 1024;
         const targetElement = isMobile ? containerBooking : bookingInfo;
         smoothScroll(targetElement, 0);
     });
     
     faqsLink.addEventListener("click", function (event) {
         event.preventDefault();
-        const isMobile = window.innerWidth <= 768;
+        const isMobile = window.innerWidth <= 1024;
         const offset = isMobile ? 100 : 0; 
         smoothScroll(containerFaqs, offset);
     });

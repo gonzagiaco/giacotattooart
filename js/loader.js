@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     entry.target.classList.add("visible");
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.1 });
 
         elementos.forEach(elemento => observer.observe(elemento));
     }

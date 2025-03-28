@@ -23,7 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
           rows: 2,
           fill: "row",
         }
-      }
+      },
+      768: { // Se aplica en pantallas mayores a 769px
+        slidesPerView: 3,
+        grid: {
+          rows: 3,
+          fill: "row",
+        }
+      },
     }
   });
 });

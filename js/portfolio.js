@@ -7,66 +7,118 @@ document.addEventListener('DOMContentLoaded', function () {
     const mediaElements = document.querySelectorAll('.image-portfolio');
     let currentIndex = 0;
 
-    // Abrir lightbox al hacer clic en una imagen o video
-    mediaElements.forEach((media, index) => {
-        media.addEventListener('click', () => {
-            currentIndex = index;
-            openLightbox();
+    // Variables para touch
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    // Solo agregar event listeners si la pantalla es más grande que 767px (tablet en adelante)
+    if (window.innerWidth > 767) {
+        // Abrir lightbox al hacer clic en una imagen o video
+        mediaElements.forEach((media, index) => {
+            media.addEventListener('click', () => {
+                currentIndex = index;
+                openLightbox();
+            });
         });
-    });
 
-    // Función para abrir el lightbox
-    function openLightbox() {
-        lightbox.style.display = 'block';
-        updateLightboxContent();
-    }
-
-    // Función para actualizar el contenido del lightbox
-    function updateLightboxContent() {
-        const currentMedia = mediaElements[currentIndex];
-        const mediaType = currentMedia.getAttribute('data-type');
-
-        lightboxContent.innerHTML = ''; // Limpiar contenido anterior
-
-        if (mediaType === 'image') {
-            const img = document.createElement('img');
-            img.src = currentMedia.src;
-            img.alt = currentMedia.alt;
-            lightboxContent.appendChild(img);
-        } else if (mediaType === 'video') {
-            const video = document.createElement('video');
-            video.src = currentMedia.src; // Usar el atributo src directamente
-            video.controls = true;
-            video.autoplay = true; // Reproducir automáticamente
-            video.muted = true; // Asegurar que esté muteado para autoplay
-            lightboxContent.appendChild(video);
+        // Función para abrir el lightbox
+        function openLightbox() {
+            lightbox.style.display = 'flex';
+            updateLightboxContent();
+            addTouchListeners();  // Agregar listeners de touch al abrir el lightbox
         }
-    }
 
-    // Cerrar lightbox
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-    });
+        // Función para actualizar el contenido del lightbox
+        function updateLightboxContent() {
+            const currentMedia = mediaElements[currentIndex];
+            const mediaType = currentMedia.getAttribute('data-type');
 
-    // Navegar a la imagen o video anterior
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + mediaElements.length) % mediaElements.length;
-        updateLightboxContent();
-    });
+            lightboxContent.innerHTML = ''; // Limpiar contenido anterior
 
-    // Navegar a la siguiente imagen o video
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % mediaElements.length;
-        updateLightboxContent();
-    });
+            if (mediaType === 'image') {
+                const img = document.createElement('img');
+                img.src = currentMedia.src;
+                img.alt = currentMedia.alt;
+                lightboxContent.appendChild(img);
+            } else if (mediaType === 'video') {
+                const video = document.createElement('video');
+                video.src = currentMedia.src;
+                video.controls = true;
+                video.autoplay = true;
+                video.muted = true;
+                lightboxContent.appendChild(video);
+            }
+        }
 
-    // Cerrar lightbox al hacer clic en el overlay (fondo oscuro)
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) { // Solo cerrar si se hace clic en el fondo
+        // Cerrar lightbox
+        closeBtn.addEventListener('click', () => {
             lightbox.style.display = 'none';
-        }
-    });
+            removeTouchListeners();  // Eliminar listeners de touch al cerrar el lightbox
+        });
 
+        // Navegar a la imagen o video anterior
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + mediaElements.length) % mediaElements.length;
+            updateLightboxContent();
+        });
+
+        // Navegar a la siguiente imagen o video
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % mediaElements.length;
+            updateLightboxContent();
+        });
+
+        // Cerrar lightbox al hacer clic en el overlay (fondo oscuro)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) { // Solo cerrar si se hace clic en el fondo
+                lightbox.style.display = 'none';
+                removeTouchListeners();  // Eliminar listeners de touch al cerrar el lightbox
+            }
+        });
+
+        // Funciones de swipe para tablets
+        function addTouchListeners() {
+            lightbox.addEventListener('touchstart', handleTouchStart, false);
+            lightbox.addEventListener('touchmove', handleTouchMove, false);
+            lightbox.addEventListener('touchend', handleTouchEnd, false);
+        }
+
+        function removeTouchListeners() {
+            lightbox.removeEventListener('touchstart', handleTouchStart, false);
+            lightbox.removeEventListener('touchmove', handleTouchMove, false);
+            lightbox.removeEventListener('touchend', handleTouchEnd, false);
+        }
+
+        function handleTouchStart(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }
+
+        function handleTouchMove(e) {
+            touchEndX = e.changedTouches[0].screenX;
+        }
+
+        function handleTouchEnd() {
+            if (touchStartX - touchEndX > 50) {  // Deslizar a la izquierda
+                nextImage();
+            }
+            if (touchEndX - touchStartX > 50) {  // Deslizar a la derecha
+                prevImage();
+            }
+        }
+
+        // Cambiar a la siguiente imagen
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % mediaElements.length;
+            updateLightboxContent();
+        }
+
+        // Cambiar a la imagen anterior
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + mediaElements.length) % mediaElements.length;
+            updateLightboxContent();
+        }
+
+    }
 
     document.getElementById("descargar-pdf").addEventListener("click", async function () {
         const { jsPDF } = window.jspdf;
