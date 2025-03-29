@@ -15,6 +15,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"></script>
+
+
 
 
 
@@ -37,20 +40,25 @@
                 <label class="hamburger" data-animacion="slide-right">
                     <input type="checkbox">
                     <svg viewBox="0 0 32 32">
-                      <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                      <path class="line" d="M7 16 27 16"></path>
+                        <path class="line line-top-bottom"
+                            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                        </path>
+                        <path class="line" d="M7 16 27 16"></path>
                     </svg>
-                  </label>
+                </label>
             </header>
-            <nav class="desktop-nav" >
+            <nav class="desktop-nav">
                 <ul data-animacion="slide-right">
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#booking" data-i18n="header.booking">Booking</a></li>
                     <li><a href="#faqs">Faqs</a></li>
-                    <li><a href="#" style="display: flex; align-items: center;"><img src="media/change.svg"
-                                style="margin-right: 5px;" alt="">Change to spanish</a></li>
+                    <li><a href="javascript:void(0)" class="change-button" style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
+                                alt="">
+                            <span data-i18n="header.changeLanguage"> Change to Spanish</span>
+                        </a></li>
                     <li id="menu-social">
-                        <a target="_blank" href="https://www.instagram.com/giacotattooart"><img src="media/ig-black.svg" alt=""></a>
+                        <a target="_blank" href="https://www.instagram.com/giacotattooart"><img src="media/ig-black.svg"
+                                alt=""></a>
                     </li>
                 </ul>
             </nav>
@@ -60,20 +68,26 @@
 
                 <div id="hero-text" data-animacion="slide-right">
                     <p class="hero-logo" data-animacion="slide-right">GIACOTATTOOART</p>
-                    <h1>Tattoo artist <br>
-                        based in Olavarría, Buenos Aires, <span class="mobile-break"></span> Argentina <img
-                            src="media/argentina.webp" id="argentina" alt="">
-                    </h1>
+
+                    <div class="hero-title-container"
+                        style="display: flex; align-items: center; gap: 10px; width: 100%; height: fit-content;">
+                        <h1><span data-i18n="hero.title">Tattoo artist <br>
+                                based in Olavarría, Buenos Aires, <span class="mobile-break"></span> Argentina </span>
+                            <img src="media/argentina.webp" id="argentina" alt="">
+
+                        </h1>
+                    </div>
                 </div>
                 <div class="hero-btn-resource">
-                    <a href="#booking" class="hero-btn" data-animacion="slide-left">Book now</a>
+                    <a href="#booking" class="hero-btn" data-animacion="slide-left" data-i18n="hero.bookNow">Book
+                        now</a>
                     <img src="media/resource1.webp" id="resource1" data-animacion="fade-in" alt="">
                 </div>
             </div>
             <img src="media/resource3.png" id="resource2" data-animacion="fade-in" alt="">
 
             <div class="gallery">
-                <h2 data-animacion="slide-up">GALLERY</h2>
+                <h2 data-animacion="slide-up" data-i18n="gallery.title">GALLERY</h2>
 
                 <!-- Slider main container -->
                 <div class="swiper">
@@ -118,7 +132,7 @@
 
                 </div>
 
-                <a href="portfolio.html" id="btn-seeall">See all</a>
+                <a href="portfolio.html" id="btn-seeall" data-i18n="gallery.seeAll">See all</a>
             </div>
         </div>
         <div class="container-w-right">
@@ -126,61 +140,122 @@
         </div>
     </div>
     <div class="container-booking" id="booking">
-        <h3 data-animacion="slide-up">BOOKING</h3>
-        <div class="booking-info" >
-            <p id="before-booking" data-animacion="slide-up">Before booking</p>
+        <h3 data-animacion="slide-up" data-i18n="booking.title">BOOKING</h3>
+        <div class="booking-info">
+            <p id="before-booking" data-animacion="slide-up" data-i18n="booking.beforeBooking">Before booking</p>
             <div class="card-info" data-animacion="slide-left">
                 <p class="info-number">1</p>
-                <span class="info">Most of your questions are likely already answered in our FAQ! Please fill out this
+                <span class="info" data-i18n="booking.info1">Most of your questions are likely already answered in our
+                    FAQ! Please fill out this
                     form as accurately as possible, as we will use this information to create your quote and schedule
                     your appointment.</span>
             </div>
             <div class="card-info" data-animacion="slide-left">
                 <p class="info-number">2</p>
-                <span class="info">Most of your questions are likely already answered in our FAQ! Please fill out this
+                <span class="info" data-i18n="booking.info2">Most of your questions are likely already answered in our
+                    FAQ! Please fill out this
                     form as accurately as possible, as we will use this information to create your quote and schedule
                     your appointment.</span>
             </div>
             <div class="card-info" data-animacion="slide-left">
                 <p class="info-number">3</p>
-                <span class="info">Most of your questions are likely already answered in our FAQ! Please fill out this
+                <span class="info" data-i18n="booking.info3">Most of your questions are likely already answered in our
+                    FAQ! Please fill out this
                     form as accurately as possible, as we will use this information to create your quote and schedule
                     your appointment.</span>
             </div>
             <div class="extra" data-animacion="slide-up">
                 <img src="media/info.svg" alt="">
-                <p>Important: Don’t forget to check your spam folder!</p>
+                <p data-i18n="booking.important">Important: Don’t forget to check your spam folder!</p>
             </div>
-            <button id="btn-book" data-animacion="slide-up">Book now <img src="media/arrow-right.svg" id="arrow-right"
-                    alt=""></button>
+            <button id="btn-book" data-animacion="slide-up"><span data-i18n="booking.bookButton">Book now </span><img
+                    src="media/arrow-right.svg" id="arrow-right" alt=""></button>
         </div>
     </div>
     <div class="container-faq" id="faqs">
         <h3 data-animacion="slide-up">FAQS</h3>
         <div class="faqs">
-            <div class="faq-card" data-animacion="slide-up">
-                <p>Después de tener mi cita, ¿Qué hago?</p>
-                <img src="media/arrow-down.svg" id="arrow-down" alt="">
+            <div class="faq-column">
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p data-i18n="faqs.question1">Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body" data-i18n="faqs.answer1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p>Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p>Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
             </div>
-            <div class="faq-card" data-animacion="slide-up">
-                <p>Después de tener mi cita, ¿Qué hago?</p>
-                <img src="media/arrow-down.svg" id="arrow-down" alt="">
-            </div>
-            <div class="faq-card" data-animacion="slide-up">
-                <p>Después de tener mi cita, ¿Qué hago?</p>
-                <img src="media/arrow-down.svg" id="arrow-down" alt="">
-            </div>
-            <div class="faq-card" data-animacion="slide-up">
-                <p>Después de tener mi cita, ¿Qué hago?</p>
-                <img src="media/arrow-down.svg" id="arrow-down" alt="">
-            </div>
-            <div class="faq-card" data-animacion="slide-up">
-                <p>Después de tener mi cita, ¿Qué hago?</p>
-                <img src="media/arrow-down.svg" id="arrow-down" alt="">
-            </div>
-            <div class="faq-card" data-animacion="slide-up">
-                <p>Después de tener mi cita, ¿Qué hago?</p>
-                <img src="media/arrow-down.svg" id="arrow-down" alt="">
+            <div class="faq-column">
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p>Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p>Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p>Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -189,50 +264,47 @@
     <div id="modal" class="modal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <p id="form-title">Reserva tu turno</p>
+            <p id="form-title" data-i18n="form.title">Reserva tu turno</p>
             <form id="booking-form">
                 <div id="step1" class="step active">
-                    <p id="step-title">Datos Personales</p>
+                    <p id="step-title" data-i18n="form.personalData">Datos Personales</p>
                     <div class="step1-container">
                         <div class="campo">
-                            <label for="">Nombre completo *</label>
+                            <label for="" data-i18n="form.fullName">Nombre completo *</label>
                             <input type="text" id="nombre" name="nombre" placeholder="Franco Giacomino">
                             <p class="error-message" id="error-nombre"></p>
                         </div>
                         <div class="campo">
-                            <label for="">Edad *</label>
+                            <label for="" data-i18n="form.age">Edad *</label>
                             <input style="width: 20%;" name="edad" type="number" id="edad" placeholder="30">
                             <p class="error-message" id="error-edad"></p>
                         </div>
                         <div class="campo">
-                            <label for="">Email *</label>
+                            <label for="" data-i18n="form.email">Email *</label>
                             <input type="email" id="email" name="email" placeholder="frangiacomino@gmail.com">
                             <p class="error-message" id="error-email"></p>
                         </div>
                         <div class="campo">
-                            <label for="">Teléfono *</label>
+                            <label for="" data-i18n="form.phone">Teléfono *</label>
                             <input type="tel" id="telefono" name="telefono" placeholder="+54 9 2284 472217">
                             <p class="error-message" id="error-telefono"></p>
                         </div>
                     </div>
-                    <button type="button" id="btn-next">Siguiente</button>
+                    <button type="button" id="btn-next" data-i18n="form.next">Siguiente</button>
                 </div>
                 <div id="step2" class="step">
-                    <p id="step-title">Detalles del Tatuaje</p>
+                    <p id="step-title" data-i18n="form.tattooDetails">Detalles del Tatuaje</p>
                     <div class="step2-container">
                         <div class="campo">
-                            <label for="">Estilo de tatuaje *</label>
+                            <label for="" data-i18n="form.style">Estilo de tatuaje *</label>
                             <select type="text" id="estilo" name="select" placeholder="Estilo de Tatuaje">
-                                <option value="realismo">Realismo</option>
-                                <option value="surrealismo">Surrealismo</option>
-                                <option value="fineline">Fine line</option>
-                                <option value="neotradi">Neotradi</option>
+
                             </select>
                             <p class="error-message" id="error-estilo"></p>
 
                         </div>
                         <div class="campo">
-                            <label for="">Idea del tatuaje *</label>
+                            <label for="" data-i18n="form.idea">Idea del tatuaje *</label>
                             <input id="idea" style="resize: none;" name="idea"
                                 placeholder="Perro sentado mirando el horizonte"></input>
                             <p class="error-message" id="error-idea"></p>
@@ -240,46 +312,34 @@
 
                         </div>
                         <div class="campo">
-                            <label for="">Ubicación del tatuaje *</label>
+                            <label for="" data-i18n="form.placement">Ubicación del tatuaje *</label>
                             <input type="text" id="ubicacion" name="ubicacion"
                                 placeholder="Pecho izquierdo y costillas">
                             <p class="error-message" id="error-ubicacion"></p>
 
                         </div>
                         <div class="campo">
-                            <label for="">Tamaño del tatuaje *</label>
+                            <label for="" data-i18n="form.size">Tamaño del tatuaje *</label>
                             <input type="text" id="tamano" name="tamano" placeholder="10x10 centímetros">
                             <p class="error-message" id="error-tamano"></p>
 
                         </div>
-                        <!-- <div class="campo">
-                            <label for="">Imágen de referencia *</label>
-                            <input type="file" id="imagen" name="imagen" accept="image/*"
-                                placeholder="Imagen de Referencia (URL)">
-                            <button type="button" id="custom-file-button">Seleccionar archivo</button>
-                            <p class="error-message" id="error-imagen"></p>
 
-                        </div>
-                        <div class="campo">
-                            <div id="image-preview-container">
-                                <img id="image-preview" src="" alt="Previsualización de imagen"
-                                    style="display: none; width: 50px; height: 50px; object-fit: cover; margin-bottom: 30px;">
-                            </div>
-
-                        </div> -->
                     </div>
                     <div class="step2-buttons">
-                        <button type="button" id="back-btn">Atrás</button>
-                        <button type="submit" id="btn-enviar">Enviar</button>
+                        <button type="button" id="back-btn" data-i18n="form.back">Atrás</button>
+                        <button type="submit" id="btn-enviar" data-i18n="form.submit">Enviar</button>
                     </div>
                 </div>
                 <div id="step3" class="step">
-                    <p>Reserva enviada con éxito <svg style="display: flex; align-items: center; margin-top: 5px;"
+                    <p data-i18n="form.success">Reserva enviada con éxito <svg
+                            style="display: flex; align-items: center; margin-top: 5px;"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="54" height="54">
                             <path d="M9 16.2l-4.6-4.6 1.4-1.4 3.2 3.2 7.6-7.6 1.4 1.4z" fill="#4CAF50" />
                         </svg>
                     </p>
-                    <p>Giacotattooart se estará contactando con vos en estos días para enviarte el presupuesto y fecha
+                    <p data-i18n="form.successMessage">Giacotattooart se estará contactando con vos en estos días para
+                        enviarte el presupuesto y fecha
                         disponible. <br> <br>
                         Que tengas buen día &#128522;
 
@@ -296,8 +356,10 @@
                 <p id="footer-title-mobile">GIACO <br> TATTOO <br> ART</p>
                 <p id="footer-title-desktop">GIACOTATTOOART</p>
                 <div class="social">
-                    <img src="media/ig.svg" loading="lazy" alt="">
-                    <a target="_blank" href="https://www.instagram.com/giacotattooart"></a><img src="media/tiktok.svg" loading="lazy" alt="">
+                    <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"
+                            src="media/ig.svg" loading="lazy" alt=""></a>
+                    <a target="_blank" href=""> <img src="media/tiktok.svg" loading="lazy" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -306,10 +368,12 @@
                 <p>Menu</p>
                 <ul>
                     <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="#booking">Book an appointment</a></li>
+                    <li><a href="#booking" data-i18n="footer.bookAppointment">Book an appointment</a></li>
                     <li><a href="#faqs">Faqs</a></li>
-                    <li><a href="#" style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
-                                id="change-footer" alt=""> Change to spanish</a></li>
+                    <li><a href="javascript:void(0)" class="change-button"
+                            style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
+                                id="change-footer" alt="" ><span data-i18n="header.changeLanguage"> Change to
+                                Spanish</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -322,6 +386,8 @@
     <script src="js/lazy.js"></script>
     <script src="js/email.js"></script>
     <script src="js/popup.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/language.js"></script>
 
 </body>
 

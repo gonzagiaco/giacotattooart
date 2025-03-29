@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".desktop-nav a, .desktop-nav-portfolio a");
+    const navLinks = document.querySelectorAll(".desktop-nav a, .desktop-nav-portfolio a, .desktop-nav-footer a");
     const menu_burger = document.querySelector(".hamburger");
     const menu_mobile = document.querySelector(".desktop-nav");
     const navItems = document.querySelectorAll('.desktop-nav li');
     const menuCheckbox = document.querySelector(".hamburger input[type='checkbox']");
-
 
     // BOOKING
     const bookingLink = document.querySelector("a[href='#booking']");
@@ -12,19 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const bookingInfo = document.querySelector(".booking-info");
 
     // FAQS
-
     const faqsLink = document.querySelector("a[href='#faqs']");
-    const containerFaqs = document.querySelector(".container-faq"); // Sección en mobile
-
+    const containerFaqs = document.querySelector(".container-faq");
 
     menu_burger.addEventListener("change", () => {
         openMenu();
     });
 
     function openMenu() {
-        
         menu_mobile.classList.toggle("opened");
-
         resetAnimations();
     }
 
@@ -33,35 +28,44 @@ document.addEventListener("DOMContentLoaded", function () {
         menu_mobile.classList.remove("opened");
     }
     
-
     function resetAnimations() {
         navItems.forEach(item => {
-            item.style.animation = 'none'; // Detiene la animación actual
-            item.offsetHeight; // Trigger reflow (necesario para reiniciar la animación)
-            item.style.animation = ''; // Vuelve a activar la animación
+            item.style.animation = 'none';
+            item.offsetHeight;
+            item.style.animation = '';
         });
     }
 
+    // Función para verificar si un enlace está en el footer
+    function isInFooter(link) {
+        return link.closest('.desktop-nav-footer') !== null;
+    }
 
     navLinks.forEach(link => {
-        link.addEventListener("mouseenter", () => {
-            // Cambia el color del enlace en hover a negro
-            link.style.color = "rgb(0, 0, 0)";
+        // Establecer color inicial basado en la ubicación
+        link.style.color = isInFooter(link) ? "rgba(255, 255, 255, 0.7)" : "#333";
 
-            // Cambia el color de los demás enlaces a gris
+        link.addEventListener("mouseenter", () => {
+            // Color al hacer hover
+            link.style.color = isInFooter(link) ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)";
+
+            // Color de los demás enlaces
             navLinks.forEach(otherLink => {
                 if (otherLink !== link) {
-                    otherLink.style.color = "rgb(179, 179, 179)";
+                    otherLink.style.color = isInFooter(otherLink) 
+                        ? "rgba(255, 255, 255, 0.5)" 
+                        : "rgb(179, 179, 179)";
                 }
             });
         });
 
         link.addEventListener("mouseleave", () => {
-            // Restaura el color original de todos los enlaces
+            // Restaurar colores originales
             navLinks.forEach(otherLink => {
-                otherLink.style.color = "#333";
+                otherLink.style.color = isInFooter(otherLink) 
+                    ? "rgba(255, 255, 255, 0.7)" 
+                    : "#333";
             });
-
         });
 
         link.addEventListener("click", () => {
@@ -69,25 +73,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    
     function cambiarId() {
         const bookingInfo = document.querySelector(".booking-info");
         const containerBooking = document.querySelector(".container-booking");
 
-        // Verificar si estamos en un dispositivo móvil o en escritorio
-        if (window.innerWidth <= 768) { // Dispositivos móviles
-            containerBooking.id = "booking"; // Añadir id a la clase container-booking
-            bookingInfo.removeAttribute("id"); // Remover id de booking-info si está presente
-        } else { // Escritorio
-            bookingInfo.id = "booking"; // Añadir id a la clase booking-info
-            containerBooking.removeAttribute("id"); // Remover id de container-booking si está presente
+        if (window.innerWidth <= 768) {
+            containerBooking.id = "booking";
+            bookingInfo.removeAttribute("id");
+        } else {
+            bookingInfo.id = "booking";
+            containerBooking.removeAttribute("id");
         }
     }
 
-    // Llamamos la función al cargar la página
     cambiarId();
-
-    // Cambiamos el id cada vez que el tamaño de la ventana cambie
     window.addEventListener("resize", cambiarId);
-
 });
