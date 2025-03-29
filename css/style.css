@@ -79,6 +79,8 @@ header.visible {
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+
+
 }
 
 .desktop-nav ul {
@@ -146,6 +148,20 @@ header.visible {
 
 }
 
+#video-hero {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    /* Dejamos el video con opacidad normal */
+    display: none;
+
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 80%);
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.39) 80%);
+}
 
 #hero-text {
     display: flex;
@@ -729,7 +745,7 @@ footer {
     justify-content: center;
 }
 
-#desktop-nav-portfolio{
+#desktop-nav-portfolio {
     background-color: white;
     padding: 1%;
     margin-bottom: 0;
@@ -982,7 +998,9 @@ footer {
 
 @media screen and (max-width: 1024px) {
 
-
+    #video-hero {
+        display: block;
+    }
 
     /* PORTFOLIO */
 
@@ -1005,12 +1023,16 @@ footer {
         cursor: pointer;
     }
 
-    .container-portfolio{
+    .container-portfolio {
         margin-top: 70px;
     }
 
-    #desktop-nav-portfolio{
+    #desktop-nav-portfolio {
         font-size: 4vw;
+
+        background: rgba(255, 255, 255, 0.89);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
     /* // */
@@ -1087,6 +1109,10 @@ footer {
         top: -100%;
         z-index: -1;
         transition: all 0.6s ease;
+
+        background: rgba(255, 255, 255, 0.89);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
     .desktop-nav.opened {
@@ -1141,6 +1167,11 @@ footer {
         /* Cuarto elemento con 0.8s de retraso */
     }
 
+    .desktop-nav li:nth-child(6) {
+        animation-delay: 1.2s;
+        /* Cuarto elemento con 0.8s de retraso */
+    }
+
     /* Definimos la animación */
     @keyframes fadeInUp {
         to {
@@ -1161,7 +1192,7 @@ footer {
     }
 
     .hero-logo {
-        font-size: 5em;
+        font-size: 8vw;
         text-align: center;
     }
 
@@ -1250,7 +1281,6 @@ footer {
         transform: translate(-50%, -50%) rotate(0deg);
         /* Rotación continua */
         transition: opacity 1s ease;
-        width: calc(100% + 100px);
     }
 
 
@@ -1370,6 +1400,7 @@ footer {
         flex-direction: column;
         gap: 50px;
         margin-bottom: 50px;
+        margin-top: 50px;
     }
 
     .footer-der {
@@ -1422,26 +1453,44 @@ footer {
     }
 
     #resource1 {
-        width: 80%;
+        width: 60%;
+    }
+
+    .hero-btn {
+        position: absolute;
+        top: 70%;
+        padding: 1% 20%;
     }
 }
 
 @media screen and (min-height: 400px) and (max-height: 768px) and (max-width: 1024px) {
     .hero-logo {
-        font-size: 2.5em;
+        font-size: 3em;
     }
 
     h1 {
         text-align: center;
-        font-size: 2em;
+        font-size: 1.5em;
         width: 100%;
     }
 
     .hero {
         gap: 50px;
+        padding: 10%;
     }
 
-    #desktop-nav-portfolio{
+    .hero-btn {
+        position: absolute;
+        top: 70%;
+        padding: 1% 20%;
+        font-size: 3vw;
+    }
+
+    #resource1{
+        width: 50%;
+    }
+
+    #desktop-nav-portfolio {
         font-size: 2vw;
     }
 
@@ -1506,7 +1555,7 @@ footer {
         gap: 20px;
     }
 
-    #desktop-nav-portfolio{
+    #desktop-nav-portfolio {
         font-size: 1.5em;
     }
 
@@ -1515,7 +1564,7 @@ footer {
         gap: 5vh;
 
     }
-    
+
 }
 
 

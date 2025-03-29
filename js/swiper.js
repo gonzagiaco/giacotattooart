@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
           fill: "row",
         }
       },
+      1025: { // Se aplica en pantallas mayores a 769px
+        slidesPerView: 3,
+        grid: {
+          rows: 2,
+          fill: "row",
+        }
+      }
     }
   });
 });
