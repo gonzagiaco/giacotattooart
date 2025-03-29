@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", () => {
         let scrollY = window.scrollY;
 
-        moverElemento(videoHero, { x: 0, y: 30, rotation: 0 }, scrollY, 1);
-        moverElemento(resourceWrapper, { x: 0, y: -30, rotation: 0 }, scrollY, 0.2);
+        moverElemento(videoHero, { x: 0, y: 30, rotation: 0 }, scrollY, 0.3);
+        moverElemento(resourceWrapper, { x: 0, y: -30, rotation: 0 }, scrollY, 0.1);
 
 
         // Para resource1: mantener la rotación original y aplicar solo traslación en Y

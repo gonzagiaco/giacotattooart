@@ -17,7 +17,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"></script>
 
-
+    <meta name="description" content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
 
 
 
@@ -58,13 +58,13 @@
                         </a></li>
                     <li id="menu-social">
                         <a target="_blank" href="https://www.instagram.com/giacotattooart"><img src="media/ig-black.svg"
-                                alt=""></a>
+                                alt="Instagram" aria-label="Instagram de Giaco tattoo art"></a>
                     </li>
                 </ul>
             </nav>
             <!-- FIN MENU -->
             <div class="hero" id="home">
-                <video src="hero.mp4" id="video-hero" data-animacion="fade-in" muted></video>
+                <img src="hero.webp" id="video-hero"  data-animacion="fade-in" muted></video>
 
                 <div id="hero-text" data-animacion="slide-right">
                     <p class="hero-logo" data-animacion="slide-right">GIACOTATTOOART</p>
@@ -270,23 +270,23 @@
                     <p id="step-title" data-i18n="form.personalData">Datos Personales</p>
                     <div class="step1-container">
                         <div class="campo">
-                            <label for="" data-i18n="form.fullName">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Franco Giacomino">
+                            <label for="nombre" data-i18n="form.fullName">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Franco Giacomino" autocomplete="name">
                             <p class="error-message" id="error-nombre"></p>
                         </div>
                         <div class="campo">
-                            <label for="" data-i18n="form.age">Edad *</label>
-                            <input style="width: 20%;" name="edad" type="number" id="edad" placeholder="30">
-                            <p class="error-message" id="error-edad"></p>
+                            <label for="fecha_nacimiento" data-i18n="form.age">Fecha de nacimiento *</label>
+                            <input style="width: fit-content;" name="fecha_nacimiento" type="date" id="fecha_nacimiento" placeholder="30" autocomplete="bday">
+                            <p class="error-message" id="error-fecha_nacimiento"></p>
                         </div>
                         <div class="campo">
-                            <label for="" data-i18n="form.email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="frangiacomino@gmail.com">
+                            <label for="email" data-i18n="form.email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="frangiacomino@gmail.com" autocomplete="email">
                             <p class="error-message" id="error-email"></p>
                         </div>
                         <div class="campo">
-                            <label for="" data-i18n="form.phone">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 2284 472217">
+                            <label for="telefono" data-i18n="form.phone">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 2284 472217" autocomplete="tel">
                             <p class="error-message" id="error-telefono"></p>
                         </div>
                     </div>
@@ -296,15 +296,15 @@
                     <p id="step-title" data-i18n="form.tattooDetails">Detalles del Tatuaje</p>
                     <div class="step2-container">
                         <div class="campo">
-                            <label for="" data-i18n="form.style">Estilo de tatuaje *</label>
-                            <select type="text" id="estilo" name="select" placeholder="Estilo de Tatuaje">
+                            <label for="estilo" data-i18n="form.style">Estilo de tatuaje *</label>
+                            <select type="text" id="estilo" name="select">
 
                             </select>
                             <p class="error-message" id="error-estilo"></p>
 
                         </div>
                         <div class="campo">
-                            <label for="" data-i18n="form.idea">Idea del tatuaje *</label>
+                            <label for="idea" data-i18n="form.idea">Idea del tatuaje *</label>
                             <textarea name="idea" id="idea" placeholder="Perro sentado mirando el horizonte"></textarea>
                             <p class="error-message" id="error-idea">
                             </p>
@@ -312,14 +312,14 @@
 
                         </div>
                         <div class="campo">
-                            <label for="" data-i18n="form.placement">Ubicación del tatuaje *</label>
+                            <label for="ubicacion" data-i18n="form.placement">Ubicación del tatuaje *</label>
                             <input type="text" id="ubicacion" name="ubicacion"
                                 placeholder="Pecho izquierdo y costillas">
                             <p class="error-message" id="error-ubicacion"></p>
 
                         </div>
                         <div class="campo">
-                            <label for="" data-i18n="form.size">Tamaño del tatuaje *</label>
+                            <label for="tamano" data-i18n="form.size">Tamaño del tatuaje *</label>
                             <input type="text" id="tamano" name="tamano" placeholder="10x10 centímetros">
                             <p class="error-message" id="error-tamano"></p>
 
@@ -383,7 +383,6 @@
     <script src="js/swiper.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/loader.js"></script>
-    <script src="js/lazy.js"></script>
     <script src="js/email.js"></script>
     <script src="js/popup.js"></script>
     <script src="js/faq.js"></script>

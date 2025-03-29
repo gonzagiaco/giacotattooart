@@ -355,6 +355,12 @@ h2.visible {
     margin-top: 20px !important;
 }
 
+.swiper-pagination-bullet {
+  width: 10px !important; /* Tamaño mínimo recomendado */
+  height: 10px !important;
+  margin: 8px !important; /* Espaciado suficiente entre bullets */
+}
+
 .swiper-button-next,
 .swiper-button-prev {
     position: inherit !important;
@@ -808,7 +814,7 @@ footer {
 }
 
 #step1 {
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 
@@ -817,7 +823,6 @@ footer {
 }
 
 #step3 {
-    display: flex;
     flex-direction: column;
 }
 

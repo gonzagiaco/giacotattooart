@@ -46,6 +46,7 @@ i18next.init({
                     idea: "Idea del tatuaje *",
                     placement: "Ubicación del tatuaje *",
                     size: "Tamaño del tatuaje *",
+                    selectTattoo: "Seleccionar estilo",
                     tattooStyles: {
                         realismo: "Realismo",
                         surrealismo: "Surrealismo",
@@ -108,6 +109,7 @@ i18next.init({
                     idea: "Tattoo idea *",
                     placement: "Tattoo placement *",
                     size: "Tattoo size *",
+                    selectTattoo: "Select style",
                     tattooStyles: {
                         realismo: "Realism",
                         surrealismo: "Surrealism",
@@ -173,7 +175,7 @@ function updateTattooStyles() {
     // Crear la opción por defecto
     const defaultOption = document.createElement('option');
     defaultOption.value = ''; // Valor vacío para la opción por defecto
-    defaultOption.textContent = i18next.t('form.style'); // Texto del placeholder
+    defaultOption.textContent = i18next.t('form.selectTattoo');
     selectElement.appendChild(defaultOption);
 
     // Crear las opciones de los estilos de tatuaje

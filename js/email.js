@@ -86,7 +86,7 @@ function validarStep1() {
 
     let campos = [
         { id: "nombre", valor: document.getElementById("nombre").value.trim() },
-        { id: "edad", valor: document.getElementById("edad").value.trim() },
+        { id: "fecha_nacimiento", valor: document.getElementById("fecha_nacimiento").value.trim() },
         { id: "email", valor: document.getElementById("email").value.trim() },
         { id: "telefono", valor: document.getElementById("telefono").value.trim() }
     ];
@@ -108,15 +108,9 @@ function validarStep1() {
     let nombreRegex = /^[a-zA-Z\s]+$/;  // Solo letras y espacios
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Formato de email
     let telefonoRegex = /^\+?[0-9\s]{7,15}$/;  // Solo números, mínimo 7 dígitos
-    let edad = parseInt(document.getElementById("edad").value.trim());
 
     if (!nombreRegex.test(document.getElementById("nombre").value.trim())) {
         mostrarError("nombre", "El nombre solo puede contener letras y espacios");
-        valido = false;
-    }
-
-    if (isNaN(edad) || edad < 18 || edad > 99) {
-        mostrarError("edad", "Debe ser un número entre 18 y 99 años");
         valido = false;
     }
 
@@ -127,6 +121,21 @@ function validarStep1() {
 
     if (!telefonoRegex.test(document.getElementById("telefono").value.trim())) {
         mostrarError("telefono", "Ingrese un número válido");
+        valido = false;
+    }
+
+    // Validar fecha de nacimiento (mayores de 18 años)
+    let fechaNacimiento = new Date(document.getElementById("fecha_nacimiento").value);
+    let hoy = new Date();
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    let mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        edad--;
+    }
+
+    if (isNaN(edad) || edad < 18) {
+        mostrarError("fecha_nacimiento", "Debes ser mayor de 18 años");
         valido = false;
     }
 
@@ -173,7 +182,7 @@ document.getElementById("booking-form").addEventListener("submit", function (eve
     const formData = {
         nombre: document.getElementById("nombre").value,
         email: document.getElementById("email").value,
-        edad: document.getElementById("edad").value,
+        fecha_nacimiento: document.getElementById("fecha_nacimiento").value,
         telefono: document.getElementById("telefono").value,
         estilo: document.getElementById("estilo").value,
         idea: document.getElementById("idea").value,
