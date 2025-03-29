@@ -32,9 +32,9 @@
         <div class="container-w-left">
 
             <!-- MENU -->
-            <header data-animacion="slide-left">
+            <header>
                 <a class="header-logo" data-animacion="slide-right" href="#home">GIACOTATTOOART</a>
-                <label class="hamburger">
+                <label class="hamburger" data-animacion="slide-right">
                     <input type="checkbox">
                     <svg viewBox="0 0 32 32">
                       <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
@@ -42,8 +42,8 @@
                     </svg>
                   </label>
             </header>
-            <nav class="desktop-nav" data-animacion="slide-right">
-                <ul>
+            <nav class="desktop-nav" >
+                <ul data-animacion="slide-right">
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="#booking">Booking</a></li>
                     <li><a href="#faqs">Faqs</a></li>
@@ -56,7 +56,7 @@
             </nav>
             <!-- FIN MENU -->
             <div class="hero" id="home">
-                <video src="hero.mp4" id="video-hero" data-animacion="fade-in" autoplay loop muted></video>
+                <video src="hero.mp4" id="video-hero" data-animacion="fade-in" muted></video>
 
                 <div id="hero-text" data-animacion="slide-right">
                     <p class="hero-logo" data-animacion="slide-right">GIACOTATTOOART</p>
@@ -125,7 +125,7 @@
             <video src="hero.mp4" id="hero-video" data-animacion="fade-in" autoplay loop muted></video>
         </div>
     </div>
-    <div class="container-booking">
+    <div class="container-booking" id="booking">
         <h3 data-animacion="slide-up">BOOKING</h3>
         <div class="booking-info" >
             <p id="before-booking" data-animacion="slide-up">Before booking</p>
@@ -155,7 +155,7 @@
                     alt=""></button>
         </div>
     </div>
-    <div class="container-faq" >
+    <div class="container-faq" id="faqs">
         <h3 data-animacion="slide-up">FAQS</h3>
         <div class="faqs">
             <div class="faq-card" data-animacion="slide-up">

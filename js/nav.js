@@ -70,31 +70,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     
-    function smoothScroll(targetElement, offset = 0) {
-        if (targetElement) {
-            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-    
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
-            });
-    
-            closeMenu();
+    function cambiarId() {
+        const bookingInfo = document.querySelector(".booking-info");
+        const containerBooking = document.querySelector(".container-booking");
+
+        // Verificar si estamos en un dispositivo móvil o en escritorio
+        if (window.innerWidth <= 768) { // Dispositivos móviles
+            containerBooking.id = "booking"; // Añadir id a la clase container-booking
+            bookingInfo.removeAttribute("id"); // Remover id de booking-info si está presente
+        } else { // Escritorio
+            bookingInfo.id = "booking"; // Añadir id a la clase booking-info
+            containerBooking.removeAttribute("id"); // Remover id de container-booking si está presente
         }
     }
-    
-    bookingLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        const isMobile = window.innerWidth <= 1024;
-        const targetElement = isMobile ? containerBooking : bookingInfo;
-        smoothScroll(targetElement, 0);
-    });
-    
-    faqsLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        const isMobile = window.innerWidth <= 1024;
-        const offset = isMobile ? 100 : 0; 
-        smoothScroll(containerFaqs, offset);
-    });
+
+    // Llamamos la función al cargar la página
+    cambiarId();
+
+    // Cambiamos el id cada vez que el tamaño de la ventana cambie
+    window.addEventListener("resize", cambiarId);
 
 });

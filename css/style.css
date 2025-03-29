@@ -52,33 +52,18 @@ a {
 }
 
 header {
-    opacity: 0;
-    transform: translateX(-50px);
-    /* Comienza desplazado a la izquierda */
-    transition: opacity 0.6s ease, transform 0.6s ease;
+
     /* La transición debe ser para ambos */
     z-index: 9999;
 }
 
-/* Estado final cuando se activa la animación */
-header.visible {
-    opacity: 1;
-    transform: translateX(0);
-    /* Se mueve a la posición original */
-}
 
 
-.desktop-nav.visible {
-    opacity: 1;
-    transform: translateX(0);
-    /* Se mueve a la posición original */
-}
+
 
 .desktop-nav {
     margin-bottom: 100px;
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    
 
 
 }
@@ -89,6 +74,15 @@ header.visible {
     gap: 10%;
     font-size: 1.5vw;
     padding: 0;
+
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.desktop-nav ul.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .desktop-nav ul li:nth-child(4) {
@@ -1056,9 +1050,19 @@ footer {
 
     }
 
+    
     .hamburger {
         cursor: pointer;
         display: block;
+
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .hamburger.visible {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .hamburger input {
@@ -1185,6 +1189,14 @@ footer {
         color: white;
         font-size: 1.3em;
         display: block;
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .header-logo.visible{
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .mobile-break::after {
