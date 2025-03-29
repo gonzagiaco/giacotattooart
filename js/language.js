@@ -134,11 +134,13 @@ i18next.init({
         i18next.changeLanguage(storedLanguage, function (err, t) {
             updateContent();
             updateImages();
+            updateTattooStyles();
         });
     } else {
         // Usa el idioma por defecto (español)
         updateContent();
         updateImages();
+        updateTattooStyles();
     }
 });
 
@@ -163,6 +165,26 @@ function updateImages() {
     });
 }
 
+function updateTattooStyles() {
+    const tattooStyles = i18next.t('form.tattooStyles', { returnObjects: true }); // Obtener los estilos traducidos
+    const selectElement = document.getElementById('estilo'); // Obtener el select por su ID
+    selectElement.innerHTML = ''; // Limpiar las opciones existentes
+
+    // Crear la opción por defecto
+    const defaultOption = document.createElement('option');
+    defaultOption.value = ''; // Valor vacío para la opción por defecto
+    defaultOption.textContent = i18next.t('form.style'); // Texto del placeholder
+    selectElement.appendChild(defaultOption);
+
+    // Crear las opciones de los estilos de tatuaje
+    for (let key in tattooStyles) {
+        const option = document.createElement('option');
+        option.value = key;  // La clave del estilo se asigna como el valor
+        option.textContent = tattooStyles[key];  // El texto visible es la traducción del estilo
+        selectElement.appendChild(option);
+    }
+}
+
 
 // Obtener todos los botones con la clase "change-button" y asignarles el evento click
 const change_buttons = document.querySelectorAll(".change-button");
@@ -174,6 +196,9 @@ change_buttons.forEach(function (button) {
 // Función para cambiar el idioma
 function changeLanguage() {
     // Almacenar la posición del scroll antes de cambiar el idioma
+    sessionStorage.setItem('languageChanging', 'true');
+
+
     const scrollPosition = window.scrollY;
     sessionStorage.setItem('scrollPosition', scrollPosition);
 
@@ -188,7 +213,7 @@ function changeLanguage() {
             // Actualizar contenido e imágenes
             updateContent();
             updateImages();
-
+            updateTattooStyles();
             // Recargar la página para reflejar el cambio de idioma
             location.reload();
         });

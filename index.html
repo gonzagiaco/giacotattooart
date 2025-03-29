@@ -24,12 +24,12 @@
 </head>
 
 <body>
-    <div class="container-loader">
+    <!-- <div class="container-loader">
         <p>GIACOTATTOOART</p>
         <div class="progress-loader">
             <div class="progress"></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container-white">
         <div class="container-w-left">
@@ -52,8 +52,8 @@
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="#booking" data-i18n="header.booking">Booking</a></li>
                     <li><a href="#faqs">Faqs</a></li>
-                    <li><a href="javascript:void(0)" class="change-button" style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
-                                alt="">
+                    <li><a href="javascript:void(0)" class="change-button"
+                            style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg" alt="">
                             <span data-i18n="header.changeLanguage"> Change to Spanish</span>
                         </a></li>
                     <li id="menu-social">
@@ -305,9 +305,9 @@
                         </div>
                         <div class="campo">
                             <label for="" data-i18n="form.idea">Idea del tatuaje *</label>
-                            <input id="idea" style="resize: none;" name="idea"
-                                placeholder="Perro sentado mirando el horizonte"></input>
-                            <p class="error-message" id="error-idea"></p>
+                            <textarea name="idea" id="idea" placeholder="Perro sentado mirando el horizonte"></textarea>
+                            <p class="error-message" id="error-idea">
+                            </p>
 
 
                         </div>
@@ -332,12 +332,12 @@
                     </div>
                 </div>
                 <div id="step3" class="step">
-                    <p data-i18n="form.success">Reserva enviada con éxito <svg
-                            style="display: flex; align-items: center; margin-top: 5px;"
+                    <div id="success-text"><span data-i18n="form.success">Reserva enviada con éxito</span><svg id="check"
+                            
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="54" height="54">
                             <path d="M9 16.2l-4.6-4.6 1.4-1.4 3.2 3.2 7.6-7.6 1.4 1.4z" fill="#4CAF50" />
                         </svg>
-                    </p>
+                    </div>
                     <p data-i18n="form.successMessage">Giacotattooart se estará contactando con vos en estos días para
                         enviarte el presupuesto y fecha
                         disponible. <br> <br>
@@ -372,7 +372,7 @@
                     <li><a href="#faqs">Faqs</a></li>
                     <li><a href="javascript:void(0)" class="change-button"
                             style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
-                                id="change-footer" alt="" ><span data-i18n="header.changeLanguage"> Change to
+                                id="change-footer" alt=""><span data-i18n="header.changeLanguage"> Change to
                                 Spanish</span></a></li>
                 </ul>
             </nav>
@@ -388,7 +388,8 @@
     <script src="js/popup.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/language.js"></script>
-
+    <script src="js/parallax.js"></script>
+    
 </body>
 
 </html>

@@ -162,6 +162,7 @@ function validarStep2() {
 
 document.getElementById("booking-form").addEventListener("submit", function (event) {
     event.preventDefault();
+    if(!validarStep2()) return; // Validar Step 2 antes de enviar el formulario
     
     let btnEnviar = document.getElementById("btn-enviar");
     //let arrow = document.getElementById("arrow-enviar");
