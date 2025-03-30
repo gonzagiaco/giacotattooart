@@ -1308,7 +1308,16 @@ select {
     display: none;
 }
 
-
+.tablet-break {
+    display: inline;
+  }
+  
+  /* Ocultar el <br> en pantallas de tabletas */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .tablet-break {
+      display: none;
+    }
+  }
 
 @media screen and (max-width: 1132px) {
 

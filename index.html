@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" >
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"></script>
 
     <meta name="description"
         content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
@@ -73,7 +73,9 @@
                     <div class="hero-title-container"
                         style="display: flex; align-items: center; gap: 10px; width: 100%; height: fit-content;">
                         <h1><span data-i18n="hero.title">Tattoo artist <br>
-                                based in Olavarría, Buenos Aires, <span class="mobile-break"></span> Argentina </span>
+                                based in Olavarría, Buenos Aires, <span class="mobile-break"></span></span> <span
+                                class="tablet-break"><br></span>
+                            Argentina
                             <img src="media/argentina.webp" id="argentina" alt="">
 
                         </h1>
@@ -301,8 +303,8 @@
                         </div>
                         <div class="campo">
                             <label for="fecha_nacimiento" data-i18n="form.age">Fecha de nacimiento *</label>
-                            <input style="width: fit-content; min-width: calc(100px);" name="fecha_nacimiento" type="date" id="fecha_nacimiento"
-                                placeholder="30" autocomplete="bday">
+                            <input style="width: fit-content; min-width: calc(100px + 20%);" name="fecha_nacimiento"
+                                type="date" id="fecha_nacimiento" placeholder="30" autocomplete="bday">
                             <p class="error-message" id="error-fecha_nacimiento"></p>
                         </div>
                         <div class="campo">
