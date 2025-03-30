@@ -140,7 +140,7 @@
         </div>
     </div>
     <div class="container-booking" id="booking">
-        <h3 data-animacion="slide-up" data-i18n="booking.title">BOOKING</h3>
+        <h3 data-animacion="slide-up" id="booking-title" data-i18n="booking.title">BOOKING</h3>
         <div class="booking-info">
             <p id="before-booking" data-animacion="slide-up" data-i18n="booking.beforeBooking">Before booking</p>
             <div class="card-info" data-animacion="slide-left">
@@ -189,6 +189,20 @@
                         aspernatur?
                     </div>
                 </div>
+                <div class="faq-card" data-animacion="slide-up">
+                    <div class="faq-card-head">
+                        <p data-i18n="faqs.question1">Después de tener mi cita, ¿Qué hago?</p>
+                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                    </div>
+                    <div class="faq-card-body" data-i18n="faqs.answer1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                        rerum
+                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
+                        quis
+                        aspernatur?
+                    </div>
+                </div>
+                
                 <div class="faq-card" data-animacion="slide-up">
                     <div class="faq-card-head">
                         <p>Después de tener mi cita, ¿Qué hago?</p>
@@ -290,7 +304,10 @@
                             <p class="error-message" id="error-telefono"></p>
                         </div>
                     </div>
-                    <button type="button" id="btn-next" data-i18n="form.next">Siguiente</button>
+                    <div class="step2-buttons">
+                        <button type="button"  style="opacity: 0;"></button>
+                        <button type="button" id="btn-next" data-i18n="form.next">Siguiente</button>
+                    </div>
                 </div>
                 <div id="step2" class="step">
                     <p id="step-title" data-i18n="form.tattooDetails">Detalles del Tatuaje</p>

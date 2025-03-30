@@ -22,6 +22,7 @@
 
 ::selection {
     background-color: #0C0C0C;
+    color: white;
 }
 
 
@@ -187,7 +188,7 @@ header {
 #argentina {
     object-fit: cover;
     width: 1.5vw;
-    height:auto;
+    height: auto;
 }
 
 
@@ -356,9 +357,11 @@ h2.visible {
 }
 
 .swiper-pagination-bullet {
-  width: 10px !important; /* Tamaño mínimo recomendado */
-  height: 10px !important;
-  margin: 8px !important; /* Espaciado suficiente entre bullets */
+    width: 10px !important;
+    /* Tamaño mínimo recomendado */
+    height: 10px !important;
+    margin: 8px !important;
+    /* Espaciado suficiente entre bullets */
 }
 
 .swiper-button-next,
@@ -410,13 +413,17 @@ h2.visible {
     height: fit-content;
     width: 100%;
     background-color: #0C0C0C;
-    padding: 5%;
+    padding: 2% 5% 5% 5%;
     color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 
     justify-content: space-evenly;
+}
+
+#booking-title {
+    margin-bottom: 2%;
 }
 
 .booking-info {
@@ -453,7 +460,7 @@ h2.visible {
     display: flex;
     align-items: center;
     gap: 5%;
-    width: 70%;
+    width: 75%;
     margin-bottom: 3%;
     opacity: 0;
     transform: translateY(50px);
@@ -566,10 +573,11 @@ h3.visible {
 /* FAQ SECTION */
 
 h3:nth-child(1) {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .container-faq {
+    min-height: 100vh;
     height: fit-content;
     background-color: #0C0C0C;
     padding: 5%;
@@ -604,7 +612,6 @@ h3:nth-child(1) {
     flex-direction: column;
     border: 1px solid white;
     font-size: 1.5em;
-    padding: 2%;
     margin-bottom: 6%;
     height: fit-content;
     opacity: 0;
@@ -619,6 +626,7 @@ h3:nth-child(1) {
     width: 100%;
     cursor: pointer;
     transition: all 0.3s ease-out;
+    padding: 2%;
 
 }
 
@@ -813,6 +821,13 @@ footer {
     transform: translateX(0);
 }
 
+#btn-next,
+    #btn-enviar,
+    #back-btn {
+        /* Alinea los botones abajo */
+        margin-top: 5vh;
+    }
+
 #step1 {
     display: flex;
     flex-direction: column;
@@ -827,7 +842,7 @@ footer {
 }
 
 
-#success-text{
+#success-text {
     font-size: 3vw;
     display: flex;
     align-items: center;
@@ -1343,7 +1358,7 @@ select {
     #argentina {
         object-fit: cover;
         width: 3vw;
-        height:auto;
+        height: auto;
     }
 
     #video-hero {
@@ -1576,7 +1591,7 @@ select {
     .hero-btn {
         position: absolute;
         top: 70%;
-        padding: 2% 30%;
+        padding: 2% 20vw;
     }
 
     .scroll {
@@ -1704,7 +1719,6 @@ select {
 
     .booking-info {
         margin-left: 0%;
-        font-size: 2em;
     }
 
     .booking-info p:nth-child(1) {
@@ -1754,7 +1768,7 @@ select {
 
     .container-faq {
         gap: 2em;
-        height: fit-content;
+
     }
 
     #arrow-down {
@@ -1767,7 +1781,7 @@ select {
     }
 
     .faq-card {
-        margin-bottom: 2%;
+        margin-bottom: 5%;
         gap: 5px;
         font-size: 1.4em;
     }
@@ -1821,11 +1835,11 @@ select {
         padding: 10%;
     }
 
-    #success-text{
+    #success-text {
         font-size: 5vw;
 
     }
-    
+
 }
 
 @media screen and (max-width: 1024px) and (max-height: 768px) {
@@ -1917,6 +1931,10 @@ select {
 
     /* FORM SECTION */
 
+    #btn-book{
+            font-size: 9vw;
+    }
+
     #booking-form select {
         width: 50%;
     }
@@ -1953,8 +1971,8 @@ select {
         padding-bottom: 10%;
     }
 
-    
-    
+
+
 
     .step2-buttons {
         display: flex;
@@ -2025,6 +2043,10 @@ select {
 
         gap: 5vh;
 
+    }
+
+    .faq-card {
+        margin-bottom: 10%;
     }
 
 }

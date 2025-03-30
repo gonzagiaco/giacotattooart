@@ -73,19 +73,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    function cambiarId() {
-        const bookingInfo = document.querySelector(".booking-info");
-        const containerBooking = document.querySelector(".container-booking");
+    // function cambiarId() {
+    //     const bookingInfo = document.querySelector(".booking-info");
+    //     const containerBooking = document.querySelector(".container-booking");
 
-        if (window.innerWidth <= 768) {
-            containerBooking.id = "booking";
-            bookingInfo.removeAttribute("id");
-        } else {
-            bookingInfo.id = "booking";
-            containerBooking.removeAttribute("id");
-        }
-    }
+    //     if (window.innerWidth <= 768) {
+    //         containerBooking.id = "booking";
+    //         bookingInfo.removeAttribute("id");
+    //     } else {
+    //         bookingInfo.id = "booking";
+    //         containerBooking.removeAttribute("id");
+    //     }
+    // }
 
-    cambiarId();
-    window.addEventListener("resize", cambiarId);
+    // cambiarId();
+    // window.addEventListener("resize", cambiarId);
 });
