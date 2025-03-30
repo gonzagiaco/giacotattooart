@@ -269,7 +269,7 @@ header {
 h1 {
     font-weight: normal;
     width: fit-content;
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 .hero-btn {
@@ -614,6 +614,7 @@ h3:nth-child(1) {
     font-size: 1.5em;
     margin-bottom: 6%;
     height: fit-content;
+    padding: 2%;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out, height 0.6s ease-out;
@@ -626,7 +627,6 @@ h3:nth-child(1) {
     width: 100%;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    padding: 2%;
 
 }
 
@@ -639,12 +639,13 @@ h3:nth-child(1) {
     transition: all 0.3s ease-in-out;
     overflow: hidden;
     max-height: 0;
-    padding-top: 0%;
+    margin-top: 0;
+    padding: 0;
 }
 
 .faq-card-body.card-opened {
     max-height: 200px;
-    padding: 2%;
+    margin-top: 2%;
 }
 
 .faq-card-head img {
@@ -1311,6 +1312,17 @@ select {
 
 @media screen and (max-width: 1132px) {
 
+    #btn-seeall {
+        color: white;
+        background-color: #0C0C0C;
+        border: none;
+        font-weight: bold;
+        font-size: 1.7em;
+        padding: 2% 20%;
+        margin-top: 5%;
+        transition: all 0.3s ease;
+    }
+
     #argentina {
         object-fit: cover;
         width: 3vw;
@@ -1539,7 +1551,7 @@ select {
 
     h1 {
         text-align: center;
-        font-size: 3em;
+        font-size: 4em;
         width: 100%;
     }
 
@@ -1662,8 +1674,8 @@ select {
     }
 
     .gallery-tattoo {
-        width: 160px;
-        height: 160px;
+        width: 100%;
+        height: auto;
     }
 
     .swiper-buttons {
@@ -1868,7 +1880,7 @@ select {
 
     h1 {
         text-align: center;
-        font-size: 2.5em;
+        font-size: 3em;
         width: 100%;
     }
 
@@ -1983,7 +1995,7 @@ select {
 
     h1 {
         text-align: center;
-        font-size: 1.5em;
+        font-size: 2em;
         width: 100%;
     }
 
