@@ -168,24 +168,27 @@ function updateImages() {
 }
 
 function updateTattooStyles() {
-    const tattooStyles = i18next.t('form.tattooStyles', { returnObjects: true }); // Obtener los estilos traducidos
-    const selectElement = document.getElementById('estilo'); // Obtener el select por su ID
-    selectElement.innerHTML = ''; // Limpiar las opciones existentes
+    if (document.getElementById('estilo')) { // Verificar si el select con id 'estilo' existe
+        const tattooStyles = i18next.t('form.tattooStyles', { returnObjects: true }); // Obtener los estilos traducidos
+        const selectElement = document.getElementById('estilo'); // Obtener el select por su ID
+        selectElement.innerHTML = ''; // Limpiar las opciones existentes
 
-    // Crear la opción por defecto
-    const defaultOption = document.createElement('option');
-    defaultOption.value = ''; // Valor vacío para la opción por defecto
-    defaultOption.textContent = i18next.t('form.selectTattoo');
-    selectElement.appendChild(defaultOption);
+        // Crear la opción por defecto
+        const defaultOption = document.createElement('option');
+        defaultOption.value = ''; // Valor vacío para la opción por defecto
+        defaultOption.textContent = i18next.t('form.selectTattoo');
+        selectElement.appendChild(defaultOption);
 
-    // Crear las opciones de los estilos de tatuaje
-    for (let key in tattooStyles) {
-        const option = document.createElement('option');
-        option.value = key;  // La clave del estilo se asigna como el valor
-        option.textContent = tattooStyles[key];  // El texto visible es la traducción del estilo
-        selectElement.appendChild(option);
+        // Crear las opciones de los estilos de tatuaje
+        for (let key in tattooStyles) {
+            const option = document.createElement('option');
+            option.value = key;  // La clave del estilo se asigna como el valor
+            option.textContent = tattooStyles[key];  // El texto visible es la traducción del estilo
+            selectElement.appendChild(option);
+        }
     }
 }
+
 
 
 // Obtener todos los botones con la clase "change-button" y asignarles el evento click
