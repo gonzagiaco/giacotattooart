@@ -1042,50 +1042,7 @@ select {
 
 /* PORTFOLIO SECTION */
 
-@media print {
-    body {
-        background: white;
-        color: black;
-        margin: 0;
-        padding: 0;
-    }
 
-    /* Ocultar elementos innecesarios en la impresión */
-    .container-loader,
-    .lightbox,
-    button#descargar-pdf,
-    .desktop-nav-portfolio,
-    .desktop-nav-footer,
-    footer {
-        display: none !important;
-    }
-
-    /* Ajustar el contenido para que se imprima correctamente */
-    .container-portfolio {
-        width: 100%;
-        padding: 0 !important;
-        height: fit-content !important;
-    }
-
-    /* Asegurar que las imágenes mantengan su tamaño */
-    .image-container {
-        page-break-inside: avoid;
-        /* Evitar que las imágenes se corten */
-        margin-bottom: 10px;
-    }
-
-    .image-container img,
-    .image-container video {
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain;
-    }
-
-    /* Evitar saltos de página entre imágenes seguidas */
-    .image-container:nth-child(odd) {
-        page-break-after: avoid;
-    }
-}
 
 
 .container-portfolio {
