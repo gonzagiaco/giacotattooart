@@ -44,7 +44,7 @@ function isWebMSupported() {
 const observerOptions = {
     root: null, // Observa el viewport
     rootMargin: '0px', // Margen alrededor del viewport
-    threshold: 0.8 // El video se carga cuando está al menos un 20% visible
+    threshold: 0.1 // El video se carga cuando está al menos un 20% visible
 };
 
 // Crear una instancia del Intersection Observer
