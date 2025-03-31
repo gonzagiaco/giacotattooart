@@ -16,7 +16,7 @@ function onIntersection(entries, observer) {
 const observerOptions = {
     root: null, // Observa el viewport
     rootMargin: '0px', // Margen alrededor del viewport
-    threshold: 0.5 // El video se carga cuando está al menos un 50% visible
+    threshold: 0.2 // El video se carga cuando está al menos un 50% visible
 };
 
 // Crear una instancia del Intersection Observer
