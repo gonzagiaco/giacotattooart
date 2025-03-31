@@ -1099,6 +1099,15 @@ select {
     overflow: hidden;
 }
 
+.image-container video{
+    filter: blur(10px); /* Desenfoque inicial */
+    transition: filter 0.3s ease-out; /* Transición suave */
+}
+
+.image-container  video.loading {
+    filter: none; /* Remueve el desenfoque una vez que el video se haya cargado */
+}
+
 .image-portfolio {
     width: 100%;
     /* Ocupa el 100% del contenedor */
@@ -1685,7 +1694,7 @@ select {
 
     .gallery-tattoo {
         width: 100%;
-        height: auto;
+        height: 300px;
     }
 
     .swiper-buttons {
