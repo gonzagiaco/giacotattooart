@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
-    <link rel="stylesheet" href="css/minified/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -59,16 +59,12 @@
     <div class="container-portfolio">
         <div id="portfolio">
             <div class="image-container">
-                <video muted class="image-portfolio" alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo2.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo2.mp4" type="video/mp4">
-                </video>
+                <img src="media/tattoos/tattoo1.webp" data-type="image" loading="lazy" class="image-portfolio"
+                    alt="Tatuaje 1">
             </div>
             <div class="image-container">
-                <video muted class="image-portfolio" alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo3.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo3.mp4" type="video/mp4">
-                </video>
+                <img src="media/tattoos/tattoo3.webp" data-type="image" loading="lazy" class="image-portfolio"
+                    alt="Tatuaje 1">
             </div>
             <div class="image-container">
                 <video muted class="image-portfolio" autoplay loop alt="Tatuaje 1">
@@ -125,8 +121,10 @@
                 </video>
             </div>
             <div class="image-container">
-                <img src="media/tattoos/tattoo1.webp" data-type="image" loading="lazy" class="image-portfolio"
-                    alt="Tatuaje 1">
+                <video muted class="image-portfolio" autoplay loop alt="Tatuaje 1">
+                    <source data-src="media/tattoos/tattoo2.webm" type="video/webm">
+                    <source data-src="media/tattoos/tattoo2.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="image-container">
                 <img src="media/tattoos/tattoo5.webp" data-type="image" loading="lazy" class="image-portfolio"
@@ -150,12 +148,18 @@
             <div class="footer-izq-content">
                 <p id="footer-title-mobile">GIACO <br> TATTOO <br> ART</p>
                 <p id="footer-title-desktop">GIACOTATTOOART</p>
-                <div class="social">
-                    <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"
-                            src="media/ig.svg" loading="lazy" alt=""></a>
-                    <a target="_blank" href="https://www.tiktok.com/@giacotattoo"> <img src="media/tiktok.svg"
-                            loading="lazy" alt="" alt="Tiktok" aria-label="Tiktok de Giaco tattoo art"></a>
-                    </a>
+                <div class="footer-izq-content-down">
+                    <div class="footer-izq-content-down-izq">
+                        <p  data-i18n="footer.copyright">Giacotattooart 2025 © Reservados todos los derechos</p>
+                        <a href="privacidad.html"  data-i18n="footer.politics">Política de privacidad</a>
+                    </div>
+                    <div class="social">
+                        <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"
+                                src="media/ig.svg" loading="lazy" alt=""></a>
+                        <a target="_blank" href="https://www.tiktok.com/@giacotattoo"> <img src="media/tiktok.svg"
+                                loading="lazy" alt="" alt="Tiktok" aria-label="Tiktok de Giaco tattoo art"></a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,11 +180,11 @@
 
     </footer>
 
-    <script src="js/minified/portfolio.js"></script>
-    <script src="js/minified/loader.js"></script>
+    <script src="js/minified/portfolio.min.js"></script>
+    <script src="js/minified/loader.min.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/lazy.js"></script>
-    <script src="js/minified/language.js"></script>
+    <script src="js/minified/language.min.js"></script>
 
 </body>
 

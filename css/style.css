@@ -727,6 +727,9 @@ footer {
     position: relative;
     width: fit-content;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -742,11 +745,26 @@ footer {
     transform: translateY(0);
 }
 
-.social {
-    position: absolute;
+.footer-izq-content-down{
     display: flex;
-    bottom: 0;
-    right: 0;
+    align-items: end;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-izq-content-down-izq {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-izq-content-down-izq a{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.social {
+    display: flex;
+
     z-index: 111;
 }
 
@@ -822,11 +840,11 @@ footer {
 }
 
 #btn-next,
-    #btn-enviar,
-    #back-btn {
-        /* Alinea los botones abajo */
-        margin-top: 5vh;
-    }
+#btn-enviar,
+#back-btn {
+    /* Alinea los botones abajo */
+    margin-top: 5vh;
+}
 
 #step1 {
     display: flex;
@@ -1012,7 +1030,15 @@ select {
     position: fixed;
     top: 0;
     z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+.modal.show {
+    opacity: 1;
+}
+
+
 
 .modal-overlay {
     width: 100%;
@@ -1039,6 +1065,8 @@ select {
     font-size: 0.8em;
     margin-bottom: 20px;
 }
+
+
 
 /* PORTFOLIO SECTION */
 
@@ -1099,14 +1127,7 @@ select {
     overflow: hidden;
 }
 
-.image-container video{
-    filter: blur(10px); /* Desenfoque inicial */
-    transition: filter 0.3s ease-out; /* Transición suave */
-}
 
-.image-container  video.loading {
-    filter: none; /* Remueve el desenfoque una vez que el video se haya cargado */
-}
 
 .image-portfolio {
     width: 100%;
@@ -1319,14 +1340,58 @@ select {
 
 .tablet-break {
     display: inline;
-  }
-  
-  /* Ocultar el <br> en pantallas de tabletas */
-  @media (max-width: 1024px) {
+}
+
+/* Ocultar el <br> en pantallas de tabletas */
+@media (max-width: 1024px) {
     .tablet-break {
-      display: none;
+        display: none;
     }
-  }
+}
+
+/* PRIVACITY SECTION */
+
+.container-privacity {
+    min-height: 100vh;
+    height: fit-content;
+    width: 100%;
+    background-color: white;
+    padding: 50px 25% 100px 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    color: #0a0a0a !important;
+}
+
+.container-privacity p {
+    line-height: 1.5em;
+    font-size: 1.2em;
+    color: #0a0a0a !important;
+    margin: 30px 0px;
+}
+
+.container-privacity h2 {
+    color: #0a0a0a !important;
+    font-size: 1.875rem;
+    letter-spacing: 0;
+    opacity: 1;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 0;
+    width: 100%;
+}
+
+.container-privacity h3 {
+    color: #0a0a0a !important;
+    font-size: inherit;
+    letter-spacing: 0;
+    opacity: 1;
+    margin-bottom: 0;
+    font-weight: bold;
+    transform: translateY(0px);
+}
 
 @media screen and (max-width: 1132px) {
 
@@ -1790,6 +1855,15 @@ select {
         gap: 35px;
     }
 
+    .footer-izq-content-down{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 35px;
+        justify-content: space-between;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
     .social {
         position: inherit;
     }
@@ -1826,6 +1900,53 @@ select {
         font-size: 5vw;
 
     }
+
+        /* PRIVACITY SECTION */
+
+        .container-privacity {
+            min-height: 100vh;
+            height: fit-content;
+            width: 100%;
+            background-color: white;
+            padding: 100px 10% 100px 10%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: start;
+            color: #0a0a0a !important;
+        }
+    
+        .container-privacity p {
+            line-height: 1.5em;
+            font-size: 1.2em;
+            color: #0a0a0a !important;
+            margin: 15px 0px;
+        }
+    
+        .container-privacity h2 {
+            color: #0a0a0a !important;
+            font-size: 1.875rem;
+            letter-spacing: 0;
+            opacity: 1;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 100px;
+            margin-top: 0;
+            width: 100%;
+        }
+    
+        .container-privacity h3 {
+            color: #0a0a0a !important;
+            font-size: inherit;
+            letter-spacing: 0;
+            opacity: 1;
+            text-align: start;
+            margin-bottom: 0;
+            font-weight: bold;
+            transform: translateY(0px);
+        }
+    
+        /*  */
 
 }
 
@@ -1918,8 +2039,8 @@ select {
 
     /* FORM SECTION */
 
-    #btn-book{
-            font-size: 9vw;
+    #btn-book {
+        font-size: 9vw;
     }
 
     #booking-form select {
