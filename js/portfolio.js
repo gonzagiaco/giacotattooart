@@ -34,21 +34,31 @@ document.addEventListener('DOMContentLoaded', function () {
             // Función para actualizar el contenido del lightbox
             function updateLightboxContent() {
                 const currentMedia = mediaElements[currentIndex];
-                const mediaType = currentMedia.getAttribute('data-type');
-
+                const mediaType = currentMedia.tagName.toLowerCase(); // Detectar si es IMG o VIDEO
+            
                 lightboxContent.innerHTML = ''; // Limpiar contenido anterior
-
-                if (mediaType === 'image') {
+            
+                if (mediaType === 'img') {
                     const img = document.createElement('img');
                     img.src = currentMedia.src;
                     img.alt = currentMedia.alt;
                     lightboxContent.appendChild(img);
                 } else if (mediaType === 'video') {
                     const video = document.createElement('video');
-                    video.src = currentMedia.src;
                     video.controls = true;
                     video.autoplay = true;
                     video.muted = true;
+            
+                    // Obtener todas las fuentes dentro del video original
+                    const sources = currentMedia.querySelectorAll('source');
+            
+                    sources.forEach(source => {
+                        const newSource = document.createElement('source');
+                        newSource.src = source.getAttribute('data-src'); // Usar data-src
+                        newSource.type = source.type;
+                        video.appendChild(newSource);
+                    });
+            
                     lightboxContent.appendChild(video);
                 }
             }

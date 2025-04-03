@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com 'unsafe-inline';
+  style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+  font-src 'self' data:;
+
+  img-src 'self' data:;
+  connect-src 'self' https://api.emailjs.com;
+  frame-src https://www.google.com;
+">
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <meta name="description"
+        content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
 
-    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+        integrity="sha384-JcnsjUPPylna1s1fvi1u12X5qjY5OL56iySh75FdtrwhO/SWXgMjoVqcKyIIWOLk"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+        integrity="sha384-ZZ1pncU3bQe8y31yfZdMFdSpttDoPmOZg2wguVK9almUodir1PghgT0eY7Mrty8H"
+        crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"
+        integrity="sha384-/iazY8OPgIZI08niQIDVDUzsQRoIw2HBy8qIwvnY03pbo/Ekg/Iv4rQC7kWXaDXi"
+        crossorigin="anonymous"></script>
 
 
 </head>
@@ -55,93 +78,105 @@
         </ul>
     </nav>
     <!-- FIN MENU -->
+    <main>
 
-    <div class="container-portfolio">
-        <div id="portfolio">
-            <div class="image-container">
-                <img src="media/tattoos/tattoo1.webp" data-type="image" loading="lazy" class="image-portfolio"
-                    alt="Tatuaje 1">
-            </div>
-            <div class="image-container">
-                <img src="media/tattoos/tattoo3.webp" data-type="image" loading="lazy" class="image-portfolio"
-                    alt="Tatuaje 1">
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo4.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo4.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo4.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo8.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo8.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo8.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo9.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo9.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo9.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo10.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo10.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo10.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo11.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo11.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo11.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo12.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo12.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo12.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo13.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo13.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo13.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo14.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo14.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo14.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo15.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo15.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo15.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <video muted class="image-portfolio" poster="media/tattoos/tattoo2.webp" autoplay loop alt="Tatuaje 1">
-                    <source data-src="media/tattoos/tattoo2.webm" type="video/webm">
-                    <source data-src="media/tattoos/tattoo2.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="image-container">
-                <img src="media/tattoos/tattoo5.webp" data-type="image" loading="lazy" class="image-portfolio"
-                    alt="Tatuaje 1">
-            </div>
+        <div class="container-portfolio">
+            <div id="portfolio">
+                <div class="image-container">
+                    <img src="media/tattoos/tattoo1.webp" data-type="image" loading="lazy" class="image-portfolio"
+                        alt="Tatuaje 1">
+                </div>
+                <div class="image-container">
+                    <img src="media/tattoos/tattoo3.webp" data-type="image" loading="lazy" class="image-portfolio"
+                        alt="Tatuaje 1">
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo4.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo4.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo8.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo8.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo8.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo9.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo9.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo9.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo10.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo10.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo10.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo11.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo11.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo11.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo12.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo12.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo12.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo13.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo13.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo13.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo14.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo14.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo14.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo15.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo15.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo15.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <video muted class="image-portfolio" poster="media/tattoos/tattoo2.webp" autoplay loop
+                        alt="Tatuaje 1">
+                        <source data-src="media/tattoos/tattoo2.webm" type="video/webm">
+                        <source data-src="media/tattoos/tattoo2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="image-container">
+                    <img src="media/tattoos/tattoo5.webp" data-type="image" loading="lazy" class="image-portfolio"
+                        alt="Tatuaje 1">
+                </div>
 
+            </div>
         </div>
-    </div>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
-        <div id="lightbox-content">
-            <!-- Aquí se cargará la imagen o el video -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+            <div id="lightbox-content">
+                <!-- Aquí se cargará la imagen o el video -->
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         <div class="footer-izq" data-animacion="slide-up">
@@ -150,8 +185,8 @@
                 <p id="footer-title-desktop">GIACOTATTOOART</p>
                 <div class="footer-izq-content-down">
                     <div class="footer-izq-content-down-izq">
-                        <p  data-i18n="footer.copyright">Giacotattooart 2025 © Reservados todos los derechos</p>
-                        <a href="privacidad.html"  data-i18n="footer.politics">Política de privacidad</a>
+                        <p data-i18n="footer.copyright">Giacotattooart 2025 © Reservados todos los derechos</p>
+                        <a href="privacidad.html" data-i18n="footer.politics">Política de privacidad</a>
                     </div>
                     <div class="social">
                         <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"

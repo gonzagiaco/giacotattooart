@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com 'unsafe-inline';
+  style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';
+  font-src 'self' data:;
+
+  img-src 'self' data:;
+  connect-src 'self' https://api.emailjs.com;
+  frame-src https://www.google.com;
+">
     <title>Giacotattooart</title>
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="icon" href="ruta/a/tu/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        integrity="sha384-9kDDKx/5+oRQIb/Ce7grsjaS0AWcNd9aPYY7ubOmUBUO3GovHz5BO0RliSAPq2S/" crossorigin="anonymous">
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+        integrity="sha384-Z8zwe4UlCA9xiPVMGPhmzBsPAEVtt/gabOsU+0A8Lf67I0MjHjP+UzNYng2CtJar" crossorigin="anonymous"
+        defer></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        integrity="sha384-VDbnsk/qjpIVHPQMkJiROI+vW/7cw0k8TFYVLUabm7EWoLEDwcXh09XQ6gQ86Y0B" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"
+        integrity="sha384-/iazY8OPgIZI08niQIDVDUzsQRoIw2HBy8qIwvnY03pbo/Ekg/Iv4rQC7kWXaDXi"
+        crossorigin="anonymous"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdXgwkrAAAAAOGOO8YOTLf2uEhHTAXZz6e46u5X"></script>
+
 
     <meta name="description"
         content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
@@ -32,372 +52,395 @@
         </div>
     </div> -->
 
-    <div class="container-white">
-        <div class="container-w-left">
+    <main>
+        <div class="container-white">
+            <div class="container-w-left">
 
-            <!-- MENU -->
-            <header>
-                <a class="header-logo" data-animacion="slide-right" href="#home">GIACOTATTOOART</a>
-                <label class="hamburger" data-animacion="slide-right">
-                    <input type="checkbox">
-                    <svg viewBox="0 0 32 32">
-                        <path class="line line-top-bottom"
-                            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
-                        </path>
-                        <path class="line" d="M7 16 27 16"></path>
-                    </svg>
-                </label>
-            </header>
-            <nav class="desktop-nav">
-                <ul data-animacion="slide-right">
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="#booking" data-i18n="header.booking">Booking</a></li>
-                    <li><a href="#faqs">Faqs</a></li>
-                    <li><a href="javascript:void(0)" class="change-button"
-                            style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg" alt="">
-                            <span data-i18n="header.changeLanguage"> Change to Spanish</span>
-                        </a></li>
-                    <li id="menu-social">
-                        <a target="_blank" href="https://www.instagram.com/giacotattooart"><img src="media/ig-black.svg"
-                                alt="Instagram" aria-label="Instagram de Giaco tattoo art"></a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- FIN MENU -->
-            <div class="hero" id="home">
-                <img src="hero.webp" id="video-hero" data-animacion="fade-in" muted></video>
-
-                <div id="hero-text" data-animacion="slide-right">
-                    <p class="hero-logo" data-animacion="slide-right">GIACOTATTOOART</p>
-
-                    <div class="hero-title-container"
-                        style="display: flex; align-items: center; gap: 10px; width: 100%; height: fit-content;">
-                        <h1><span data-i18n="hero.title">Tattoo artist <br>
-                                based in Olavarría, Buenos Aires, <span class="mobile-break"></span></span> <span
-                                class="tablet-break"><br></span>
-                            Argentina
-                            <img src="media/argentina.webp" id="argentina" alt="">
-
-                        </h1>
-                    </div>
-                </div>
-                <div class="hero-btn-resource">
-                    <a href="#booking" class="hero-btn" data-animacion="slide-left" data-i18n="hero.bookNow">Book
-                        now</a>
-                    <img src="media/resource1.webp" id="resource1" data-animacion="fade-in" alt="">
-                </div>
-            </div>
-            <img src="media/resource3.webp" id="resource2" data-animacion="fade-in" alt="">
-
-            <div class="gallery">
-                <h2 data-animacion="slide-up" data-i18n="gallery.title">GALLERY</h2>
-
-                <!-- Slider main container -->
-                <div class="swiper">
-                    <!-- Additional  wrapper -->
-                    <div class="swiper-wrapper" id="lightgallery">
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo1.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo2.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo3.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo5.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo6.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo8.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo9.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo12.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo13.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo14.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo15.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="media/tattoos/tattoo10.webp" data-type="image" loading="lazy"
-                                class="gallery-tattoo" alt="Tatuaje 1">
-                        </div>
-                    </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-buttons">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-
-                </div>
-
-                <a href="portfolio.html" id="btn-seeall" data-i18n="gallery.seeAll">See all</a>
-            </div>
-        </div>
-        <div class="container-w-right">
-            <video src="hero.mp4" id="hero-video" data-animacion="fade-in" autoplay loop muted></video>
-        </div>
-    </div>
-    <div class="container-booking" id="booking">
-        <h3 data-animacion="slide-up" id="booking-title" data-i18n="booking.title">BOOKING</h3>
-        <div class="booking-info">
-            <p id="before-booking" data-animacion="slide-up" data-i18n="booking.beforeBooking">Before booking</p>
-            <div class="card-info" data-animacion="slide-left">
-                <p class="info-number">1</p>
-                <span class="info" data-i18n="booking.info1">Most of your questions are likely already answered in our
-                    FAQ! Please fill out this
-                    form as accurately as possible, as we will use this information to create your quote and schedule
-                    your appointment.</span>
-            </div>
-            <div class="card-info" data-animacion="slide-left">
-                <p class="info-number">2</p>
-                <span class="info" data-i18n="booking.info2">Most of your questions are likely already answered in our
-                    FAQ! Please fill out this
-                    form as accurately as possible, as we will use this information to create your quote and schedule
-                    your appointment.</span>
-            </div>
-            <div class="card-info" data-animacion="slide-left">
-                <p class="info-number">3</p>
-                <span class="info" data-i18n="booking.info3">Most of your questions are likely already answered in our
-                    FAQ! Please fill out this
-                    form as accurately as possible, as we will use this information to create your quote and schedule
-                    your appointment.</span>
-            </div>
-            <div class="extra" data-animacion="slide-up">
-                <img src="media/info.svg" alt="">
-                <p data-i18n="booking.important">Important: Don’t forget to check your spam folder!</p>
-            </div>
-            <button id="btn-book" data-animacion="slide-up"><span data-i18n="booking.bookButton">Book now </span><img
-                    src="media/arrow-right.svg" id="arrow-right" alt=""></button>
-        </div>
-    </div>
-    <div class="container-faq" id="faqs">
-        <h3 data-animacion="slide-up">FAQS</h3>
-        <div class="faqs">
-            <div class="faq-column">
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p data-i18n="faqs.question1">Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body" data-i18n="faqs.answer1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p data-i18n="faqs.question1">Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body" data-i18n="faqs.answer1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p>Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p>Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-            </div>
-            <div class="faq-column">
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p>Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p>Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-                <div class="faq-card" data-animacion="slide-up">
-                    <div class="faq-card-head">
-                        <p>Después de tener mi cita, ¿Qué hago?</p>
-                        <img src="media/arrow-down.svg" id="arrow-down" alt="">
-                    </div>
-                    <div class="faq-card-body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
-                        rerum
-                        laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum
-                        quis
-                        aspernatur?
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div id="modal" class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <p id="form-title" data-i18n="form.title">Reserva tu turno</p>
-            <form id="booking-form">
-                <div id="step1" class="step active">
-                    <p id="step-title" data-i18n="form.personalData">Datos Personales</p>
-                    <div class="step1-container">
-                        <div class="campo">
-                            <label for="nombre" data-i18n="form.fullName">Nombre completo *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Franco Giacomino"
-                                autocomplete="name">
-                            <p class="error-message" id="error-nombre"></p>
-                        </div>
-                        <div class="campo">
-                            <label for="fecha_nacimiento" data-i18n="form.age">Fecha de nacimiento *</label>
-                            <input style="width: fit-content; min-width: calc(100px + 20%);" name="fecha_nacimiento"
-                                type="date" id="fecha_nacimiento" placeholder="30" autocomplete="bday">
-                            <p class="error-message" id="error-fecha_nacimiento"></p>
-                        </div>
-                        <div class="campo">
-                            <label for="email" data-i18n="form.email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="frangiacomino@gmail.com"
-                                autocomplete="email">
-                            <p class="error-message" id="error-email"></p>
-                        </div>
-                        <div class="campo">
-                            <label for="telefono" data-i18n="form.phone">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="+54 9 2284 472217"
-                                autocomplete="tel">
-                            <p class="error-message" id="error-telefono"></p>
-                        </div>
-                    </div>
-                    <div class="step2-buttons">
-                        <button type="button" style="opacity: 0;"></button>
-                        <button type="button" id="btn-next" data-i18n="form.next">Siguiente</button>
-                    </div>
-                </div>
-                <div id="step2" class="step">
-                    <p id="step-title" data-i18n="form.tattooDetails">Detalles del Tatuaje</p>
-                    <div class="step2-container">
-                        <div class="campo">
-                            <label for="estilo" data-i18n="form.style">Estilo de tatuaje *</label>
-                            <select type="text" id="estilo" name="select">
-
-                            </select>
-                            <p class="error-message" id="error-estilo"></p>
-
-                        </div>
-                        <div class="campo">
-                            <label for="idea" data-i18n="form.idea">Idea del tatuaje *</label>
-                            <textarea name="idea" id="idea" placeholder="Perro sentado mirando el horizonte"></textarea>
-                            <p class="error-message" id="error-idea">
-                            </p>
-
-
-                        </div>
-                        <div class="campo">
-                            <label for="ubicacion" data-i18n="form.placement">Ubicación del tatuaje *</label>
-                            <input type="text" id="ubicacion" name="ubicacion"
-                                placeholder="Pecho izquierdo y costillas">
-                            <p class="error-message" id="error-ubicacion"></p>
-
-                        </div>
-                        <div class="campo">
-                            <label for="tamano" data-i18n="form.size">Tamaño del tatuaje *</label>
-                            <input type="text" id="tamano" name="tamano" placeholder="10x10 centímetros">
-                            <p class="error-message" id="error-tamano"></p>
-
-                        </div>
-
-                    </div>
-                    <div class="step2-buttons">
-                        <button type="button" id="back-btn" data-i18n="form.back">Atrás</button>
-                        <button type="submit" id="btn-enviar" data-i18n="form.submit">Enviar</button>
-                    </div>
-                </div>
-                <div id="step3" class="step">
-                    <div id="success-text"><span data-i18n="form.success">Reserva enviada con éxito</span><svg
-                            id="check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="54" height="54">
-                            <path d="M9 16.2l-4.6-4.6 1.4-1.4 3.2 3.2 7.6-7.6 1.4 1.4z" fill="#4CAF50" />
+                <!-- MENU -->
+                <header>
+                    <a class="header-logo" data-animacion="slide-right" href="#home">GIACOTATTOOART</a>
+                    <label class="hamburger" data-animacion="slide-right">
+                        <input type="checkbox">
+                        <svg viewBox="0 0 32 32">
+                            <path class="line line-top-bottom"
+                                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+                            </path>
+                            <path class="line" d="M7 16 27 16"></path>
                         </svg>
-                    </div>
-                    <p data-i18n="form.successMessage">Giacotattooart se estará contactando con vos en estos días para
-                        enviarte el presupuesto y fecha
-                        disponible. <br> <br>
-                        Que tengas buen día &#128522;
+                    </label>
+                </header>
+                <nav class="desktop-nav">
+                    <ul data-animacion="slide-right">
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="#booking" data-i18n="header.booking">Booking</a></li>
+                        <li><a href="#faqs" data-i18n="header.faqs">Faqs</a></li>
+                        <li><a href="javascript:void(0)" class="change-button"
+                                style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
+                                    alt="">
+                                <span data-i18n="header.changeLanguage"> Change to Spanish</span>
+                            </a></li>
+                        <li id="menu-social">
+                            <a target="_blank" href="https://www.instagram.com/giacotattooart"><img
+                                    src="media/ig-black.svg" alt="Instagram"
+                                    aria-label="Instagram de Giaco tattoo art"></a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- FIN MENU -->
+                <div class="hero" id="home">
+                    <img src="hero.webp" id="video-hero" data-animacion="fade-in" muted></video>
 
-                    </p>
+                    <div id="hero-text" data-animacion="slide-right">
+                        <p class="hero-logo" data-animacion="slide-right">GIACOTATTOOART</p>
+
+                        <div class="hero-title-container"
+                            style="display: flex; align-items: center; gap: 10px; width: 100%; height: fit-content;">
+                            <h1><span data-i18n="hero.title">Tattoo artist <br>
+                                    based in Olavarría, Buenos Aires, <span class="mobile-break"></span></span> <span
+                                    class="tablet-break"><br></span>
+                                Argentina
+                                <img src="media/argentina.webp" id="argentina" alt="">
+
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="hero-btn-resource">
+                        <a href="#booking" class="hero-btn" data-animacion="slide-left" data-i18n="hero.bookNow">Book
+                            now</a>
+                        <img src="media/resource1.webp" id="resource1" data-animacion="fade-in" alt="">
+                    </div>
                 </div>
-            </form>
-            <img src="media/x.svg" alt="" id="close-modal">
+                <img src="media/resource3.webp" id="resource2" data-animacion="fade-in" alt="">
+
+                <div class="gallery">
+                    <h2 data-animacion="slide-up" data-i18n="gallery.title">GALLERY</h2>
+
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional  wrapper -->
+                        <div class="swiper-wrapper" id="lightgallery">
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo1.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo2.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo3.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo4.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo5.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo6.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo8.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo9.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo12.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo13.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo14.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo15.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="media/tattoos/tattoo10.webp" data-type="image" loading="lazy"
+                                    class="gallery-tattoo" alt="Tatuaje 1">
+                            </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-buttons">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+
+                    </div>
+
+                    <a href="portfolio.html" id="btn-seeall" data-i18n="gallery.seeAll">See all</a>
+                </div>
+            </div>
+            <div class="container-w-right">
+                <video src="hero.mp4" id="hero-video" poster="hero.webp" data-animacion="fade-in" autoplay loop
+                    muted></video>
+            </div>
         </div>
-    </div>
+        <div class="container-booking" id="booking">
+            <h3 data-animacion="slide-up" id="booking-title" data-i18n="booking.title">BOOKING</h3>
+            <div class="booking-info">
+                <p id="before-booking" data-animacion="slide-up" data-i18n="booking.beforeBooking">Before booking</p>
+                <div class="card-info" data-animacion="slide-left">
+                    <p class="info-number">1</p>
+                    <span class="info" data-i18n="booking.info1">Most of your questions are likely already answered in
+                        our
+                        FAQ! Please fill out this
+                        form as accurately as possible, as we will use this information to create your quote and
+                        schedule
+                        your appointment.</span>
+                </div>
+                <div class="card-info" data-animacion="slide-left">
+                    <p class="info-number">2</p>
+                    <span class="info" data-i18n="booking.info2">Most of your questions are likely already answered in
+                        our
+                        FAQ! Please fill out this
+                        form as accurately as possible, as we will use this information to create your quote and
+                        schedule
+                        your appointment.</span>
+                </div>
+                <div class="card-info" data-animacion="slide-left">
+                    <p class="info-number">3</p>
+                    <span class="info" data-i18n="booking.info3">Most of your questions are likely already answered in
+                        our
+                        FAQ! Please fill out this
+                        form as accurately as possible, as we will use this information to create your quote and
+                        schedule
+                        your appointment.</span>
+                </div>
+                <div class="extra" data-animacion="slide-up">
+                    <img src="media/info.svg" alt="">
+                    <p data-i18n="booking.important">Important: Don’t forget to check your spam folder!</p>
+                </div>
+                <button id="btn-book" data-animacion="slide-up"><span data-i18n="booking.bookButton">Book now
+                    </span><img src="media/arrow-right.svg" id="arrow-right" alt=""></button>
+            </div>
+        </div>
+        <div class="container-faq" id="faqs">
+            <h3 data-animacion="slide-up">FAQS</h3>
+            <div class="faqs">
+                <div class="faq-column">
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p data-i18n="faqs.question1">Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body" data-i18n="faqs.answer1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p data-i18n="faqs.question1">Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body" data-i18n="faqs.answer1">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p>Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p>Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-column">
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p>Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p>Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+                    <div class="faq-card" data-animacion="slide-up">
+                        <div class="faq-card-head">
+                            <p>Después de tener mi cita, ¿Qué hago?</p>
+                            <img src="media/arrow-down.svg" id="arrow-down" alt="">
+                        </div>
+                        <div class="faq-card-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit
+                            rerum
+                            laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod
+                            voluptatum
+                            quis
+                            aspernatur?
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <p id="form-title" data-i18n="form.title">Reserva tu turno</p>
+                <form id="booking-form">
+                    <input type="text" name="honeypot" id="honeypot" style="display: none;">
+
+                    <div id="step1" class="step active">
+                        <p id="step-title" data-i18n="form.personalData">Datos Personales</p>
+                        <div class="step1-container">
+                            <div class="campo">
+                                <label for="nombre" data-i18n="form.fullName">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Franco Giacomino"
+                                    autocomplete="name">
+                                <p class="error-message" id="error-nombre"></p>
+                            </div>
+                            <div class="campo">
+                                <label for="fecha_nacimiento" data-i18n="form.age">Fecha de nacimiento *</label>
+                                <input style="width: fit-content; min-width: calc(100px + 20%);" name="fecha_nacimiento"
+                                    type="date" id="fecha_nacimiento" placeholder="30" autocomplete="bday">
+                                <p class="error-message" id="error-fecha_nacimiento"></p>
+                            </div>
+                            <div class="campo">
+                                <label for="email" data-i18n="form.email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="frangiacomino@gmail.com"
+                                    autocomplete="email">
+                                <p class="error-message" id="error-email"></p>
+                            </div>
+                            <div class="campo">
+                                <label for="telefono" data-i18n="form.phone">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="+54 9 2284 472217"
+                                    autocomplete="tel">
+                                <p class="error-message" id="error-telefono"></p>
+                            </div>
+                        </div>
+                        <div class="step2-buttons">
+                            <button type="button" style="opacity: 0;"></button>
+                            <button type="button" id="btn-next" data-i18n="form.next">Siguiente</button>
+                        </div>
+                    </div>
+                    <div id="step2" class="step">
+                        <p id="step-title" data-i18n="form.tattooDetails">Detalles del Tatuaje</p>
+                        <div class="step2-container">
+                            <div class="campo">
+                                <label for="estilo" data-i18n="form.style">Estilo de tatuaje *</label>
+                                <select type="text" id="estilo" name="select">
+
+                                </select>
+                                <p class="error-message" id="error-estilo"></p>
+
+                            </div>
+                            <div class="campo">
+                                <label for="idea" data-i18n="form.idea">Idea del tatuaje *</label>
+                                <textarea name="idea" id="idea"
+                                    placeholder="Perro sentado mirando el horizonte"></textarea>
+                                <p class="error-message" id="error-idea">
+                                </p>
+
+
+                            </div>
+                            <div class="campo">
+                                <label for="ubicacion" data-i18n="form.placement">Ubicación del tatuaje *</label>
+                                <input type="text" id="ubicacion" name="ubicacion"
+                                    placeholder="Pecho izquierdo y costillas">
+                                <p class="error-message" id="error-ubicacion"></p>
+
+                            </div>
+                            <div class="campo">
+                                <label for="tamano" data-i18n="form.size">Tamaño del tatuaje *</label>
+                                <input type="text" id="tamano" name="tamano" placeholder="10x10 centímetros">
+                                <p class="error-message" id="error-tamano"></p>
+
+                            </div>
+
+                        </div>
+                        <div class="step2-buttons">
+                            <button type="button" id="back-btn" data-i18n="form.back">Atrás</button>
+                            <button type="submit" id="btn-enviar" data-i18n="form.submit">Enviar</button>
+                        </div>
+                    </div>
+                    <div id="step3" class="step">
+                        <div id="success-text"><span data-i18n="form.success">Reserva enviada con éxito</span><svg
+                                id="check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="54"
+                                height="54">
+                                <path d="M9 16.2l-4.6-4.6 1.4-1.4 3.2 3.2 7.6-7.6 1.4 1.4z" fill="#4CAF50" />
+                            </svg>
+                        </div>
+                        <p data-i18n="form.successMessage">Giacotattooart se estará contactando con vos en estos días
+                            para
+                            enviarte el presupuesto y fecha
+                            disponible. <br> <br>
+                            Que tengas buen día &#128522;
+
+                        </p>
+                    </div>
+                </form>
+                <img src="media/x.svg" alt="" id="close-modal">
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-izq" data-animacion="slide-up">
@@ -406,8 +449,8 @@
                 <p id="footer-title-desktop">GIACOTATTOOART</p>
                 <div class="footer-izq-content-down">
                     <div class="footer-izq-content-down-izq">
-                        <p  data-i18n="footer.copyright">Giacotattooart 2025 © Reservados todos los derechos</p>
-                        <a href="privacidad.html"  data-i18n="footer.politics">Política de privacidad</a>
+                        <p data-i18n="footer.copyright">Giacotattooart 2025 © Reservados todos los derechos</p>
+                        <a href="privacidad.html" data-i18n="footer.politics">Política de privacidad</a>
                     </div>
                     <div class="social">
                         <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"
@@ -425,7 +468,7 @@
                 <ul>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="#booking" data-i18n="footer.bookAppointment">Book an appointment</a></li>
-                    <li><a href="#faqs">Faqs</a></li>
+                    <li><a href="#faqs" data-i18n="header.faqs">Faqs</a></li>
                     <li><a href="javascript:void(0)" class="change-button"
                             style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
                                 id="change-footer" alt=""><span data-i18n="header.changeLanguage"> Change to

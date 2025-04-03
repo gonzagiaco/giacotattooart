@@ -89,7 +89,7 @@ i18next.init({
                         content: "En cualquier momento, usted puede restringir la recopilación o el uso de la información personal que es proporcionada a nuestro sitio web. Cada vez que se le solicite rellenar un formulario, como el de alta de usuario, puede marcar o desmarcar la opción de recibir información por correo electrónico. En caso de que haya marcado la opción de recibir nuestro boletín o publicidad, puede cancelarla en cualquier momento. Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido por un juez con una orden judicial."
                     },
                     changes: "Giacotattooart se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.",
-                    generatedBy: "Esta política de privacidad ha sido generada en"
+                    generatedBy: "Esta política de privacidad ha sido generada en politicadeprivacidadplantilla.com"
                 }
             
                 
@@ -182,7 +182,7 @@ i18next.init({
                         content: "At any time, you can restrict the collection or use of personal information provided to our website. Each time you are asked to fill out a form, such as a user registration form, you can check or uncheck the option to receive information by email. If you have marked the option to receive our newsletter or advertisements, you can cancel it at any time. This company will not sell, lease, or distribute the personal information collected without your consent, unless required by a judge with a court order."
                     },
                     changes: "Giacotattooart reserves the right to change the terms of this Privacy Policy at any time.",
-                    generatedBy: "This privacy policy was generated on"
+                    generatedBy: "This privacy policy was generated on politicadeprivacidadplantilla.com"
                 }
             }
         }
