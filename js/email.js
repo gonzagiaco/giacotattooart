@@ -17,6 +17,12 @@ function openModal() {
 
 function nextStep() {
     if (!validarStep1()) return;
+    let inputs = document.querySelectorAll("#booking-form input, #booking-form select, #booking-form textarea");
+    inputs.forEach(input => {
+        input.style.borderBottom = "1px solid #ccc"; // Restaurar el borde
+        let errorP = document.getElementById(`error-${input.id}`);
+        if (errorP) errorP.textContent = ""; // Borrar mensajes de error
+    });
 
     document.getElementById("step1").classList.remove("active");
     document.getElementById("step1").style.display = "none";
@@ -180,58 +186,55 @@ document.getElementById("booking-form").addEventListener("submit", function (eve
         return;
     }
 
-    grecaptcha.ready(function () {
-        grecaptcha.execute("6LdXgwkrAAAAAOGOO8YOTLf2uEhHTAXZz6e46u5X", { action: "submit" }).then(function (token) {
-            enviarFormulario(token);
-        });
-    });
-
-
-    function enviarFormulario(token) {
-
-        let btnEnviar = document.getElementById("btn-enviar");
-        //let arrow = document.getElementById("arrow-enviar");
-
-        // Registrar el tiempo inicial
-        let startTime = performance.now();
-
-        const formData = {
-            nombre: document.getElementById("nombre").value,
-            email: document.getElementById("email").value,
-            fecha_nacimiento: document.getElementById("fecha_nacimiento").value,
-            telefono: document.getElementById("telefono").value,
-            estilo: document.getElementById("estilo").value,
-            idea: document.getElementById("idea").value,
-            ubicacion: document.getElementById("ubicacion").value,
-            tamano: document.getElementById("tamano").value,
-            "g-recaptcha-response": token,
-        };
-
-        emailjs.send("service_3x5pasi", "template_vhk0bdh", formData)
-            .then(() => {
-                // Registrar el tiempo final
-                let endTime = performance.now();
-                let duration = (endTime - startTime) / 1000; // Convertir a segundos
-
-                // Aplicar duración dinámica a la animación
-                btnEnviar.style.transition = `transform ${duration}s ease-in-out`;
-
-                // Agregar la clase para iniciar la animación
-                btnEnviar.classList.add("sending");
-
-                setTimeout(() => {
-                    btnEnviar.classList.remove("sending"); // Restablecer animación
-                    document.getElementById("step1").style.display = "none";
-                    document.getElementById("step2").style.display = "none";
-                    document.getElementById("step3").style.display = "flex";
-                    document.getElementById("form-title").style.display = "none";
-                    document.getElementById("step3").classList.add("active");
-                }, duration * 1000); // Usar el tiempo real del envío
-
-            }, (error) => {
-                alert("Error al enviar el formulario");
-                console.error(error);
-            });
-
-    };
+    enviarFormulario();
 });
+
+
+function enviarFormulario() {
+
+    let btnEnviar = document.getElementById("btn-enviar");
+    //let arrow = document.getElementById("arrow-enviar");
+    btnEnviar.classList.add("sending");
+    btnEnviar.disabled = true;
+    // Registrar el tiempo inicial
+    let startTime = performance.now();
+
+    const formData = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        fecha_nacimiento: document.getElementById("fecha_nacimiento").value,
+        telefono: document.getElementById("telefono").value,
+        estilo: document.getElementById("estilo").value,
+        idea: document.getElementById("idea").value,
+        ubicacion: document.getElementById("ubicacion").value,
+        tamano: document.getElementById("tamano").value
+    };
+
+
+    emailjs.send("service_3x5pasi", "template_vhk0bdh", formData)
+        .then(() => {
+            // Registrar el tiempo final
+            let endTime = performance.now();
+            let duration = (endTime - startTime) / 1000; // Convertir a segundos
+
+            // Aplicar duración dinámica a la animación
+            btnEnviar.style.transition = `transform ${duration}s ease-in-out`;
+
+            // Agregar la clase para iniciar la animación
+
+            setTimeout(() => {
+                btnEnviar.classList.remove("sending"); // Restablecer animación
+                document.getElementById("step1").style.display = "nonegi";
+                document.getElementById("step2").style.display = "none";
+                document.getElementById("step3").style.display = "flex";
+                document.getElementById("form-title").style.display = "none";
+                document.getElementById("step3").classList.add("active");
+            }, duration); // Usar el tiempo real del envío
+
+        }, (error) => {
+            alert("Error al enviar el formulario");
+            console.error(error);
+        });
+
+};
+
