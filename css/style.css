@@ -2075,7 +2075,11 @@ select {
 
 
 @media screen and (max-width: 560px) {
-
+    .image-portfolio:hover {
+        opacity: 1;
+        cursor: pointer;
+        transform: scale(1);
+    }
     /* FORM SECTION */
 
     #btn-book {
