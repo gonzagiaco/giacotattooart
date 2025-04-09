@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navLinks = document.querySelectorAll(".desktop-nav a, .desktop-nav-portfolio a, .desktop-nav-footer a");
+    const navLinks = document.querySelectorAll(".desktop-nav a, .desktop-nav .change-button, .desktop-nav-portfolio a, .desktop-nav-footer a, .desktop-nav-footer .change-button");
     const menu_burger = document.querySelector(".hamburger");
     const menu_mobile = document.querySelector(".desktop-nav");
     const navItems = document.querySelectorAll('.desktop-nav li');
