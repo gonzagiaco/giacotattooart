@@ -258,6 +258,7 @@ change_buttons.forEach(function (button) {
 
 // Función para cambiar el idioma
 function changeLanguage() {
+    location.reload();
     // Almacenar la posición del scroll antes de cambiar el idioma
     sessionStorage.setItem('languageChanging', 'true');
 
@@ -278,7 +279,6 @@ function changeLanguage() {
             updateImages();
             updateTattooStyles();
             // Recargar la página para reflejar el cambio de idioma
-            location.reload();
         });
     }
 }
