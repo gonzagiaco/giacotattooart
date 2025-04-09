@@ -3,6 +3,7 @@
     src: url('/fonts/Champagne.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
     src: url('/fonts/ChampagneBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 .grecaptcha-badge {
@@ -178,13 +180,16 @@ header {
     flex-direction: column;
     height: fit-content;
     margin-bottom: 7%;
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 1s ease, transform 1s ease;
 
 }
 
-#hero-text.visible {
+.hero-title-container{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-title-container.visible {
     opacity: 1;
     transform: translateX(0);
 }
@@ -258,7 +263,7 @@ header {
     margin-bottom: 2%;
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
     width: 100%;
 
 }
@@ -276,6 +281,8 @@ h1 {
     font-size: 3vw;
 }
 
+
+
 .hero-btn {
     color: white;
     background-color: #0C0C0C;
@@ -286,7 +293,7 @@ h1 {
     border: 1px solid transparent;
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease;
+    transition: opacity 0.6s ease, transform 1.2s ease, background-color 0.3s ease;
     z-index: 1000;
     position: absolute;
 }
@@ -301,7 +308,8 @@ h1 {
     border: 1px solid #0C0C0C;
     color: #0C0C0C;
     cursor: pointer;
-    transform: translateY(-10px);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+
 }
 
 .gallery {
@@ -1647,7 +1655,7 @@ select {
         display: block;
         opacity: 1;
         transform: translateX(-50px);
-        transition: transform 0.6s ease, opacity 0.6s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .header-logo.visible {
