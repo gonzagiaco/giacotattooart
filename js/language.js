@@ -23,16 +23,40 @@ i18next.init({
                 booking: {
                     title: "RESERVAS",
                     beforeBooking: "Antes de reservar",
-                    info1: "¡La mayoría de tus preguntas probablemente ya estén respondidas en nuestras FAQ! Completa este formulario con la mayor precisión posible, ya que usaremos esta información para crear tu presupuesto y programar tu cita.",
-                    info2: "¡La mayoría de tus preguntas probablemente ya estén respondidas en nuestras FAQ! Completa este formulario con la mayor precisión posible, ya que usaremos esta información para crear tu presupuesto y programar tu cita.",
-                    info3: "¡La mayoría de tus preguntas probablemente ya estén respondidas en nuestras FAQ! Completa este formulario con la mayor precisión posible, ya que usaremos esta información para crear tu presupuesto y programar tu cita.",
+                    info1: "¡Seguramente ya encontraste la mayoría de las respuestas en nuestras FAQs! Ahora, por favor completá este formulario con la mayor precisión posible: esa info es la base para armar tu presupuesto y coordinar la cita.",
+                    info2: "Usá una regla para indicar el tamaño aproximado del tatuaje. Sé muy preciso al describir tu idea: objetos, formas, fondo, colores, estilo, todo detalle suma. Adjuntá también imágenes de referencia. Recordá que no replicamos otros tatuajes: ¡cada diseño es 100% original!",
+                    info3: "Una vez que envíes el formulario, te escribimos por mail/WhatsApp en 3–5 días hábiles. Te enviaremos un presupuesto estimado y una propuesta de fecha y hora. Si ese horario no te cuadra, avisanos y buscamos otra alternativa que se ajuste a tu agenda.",
                     important: "Importante: ¡No olvides revisar tu carpeta de spam!",
                     bookButton: "Reservar ahora"
                 },
                 faqs: {
                     title: "PREGUNTAS",
-                    question1: "Después de tener mi cita, ¿Qué hago?",
-                    answer1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit rerum laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum quis aspernatur?"
+                    question1: "¿Tengo que ser mayor de edad para tatuarme?",
+                    answer1: "Sí, sí o sí tenés que tener 18 años cumplidos. No tatuamos a menores, ni aunque vengan con permiso o acompañados por sus padres.",
+                    question2: "Una vez que reservo la fecha, ¿qué sigue?",
+                    answer2: "Si ya estás de acuerdo con el presupuesto y el día, el siguiente paso es hacer una seña del 40% del valor total para confirmar la cita.",
+                    question3: "¿Qué formas de pago aceptan?",
+                    answer3: "Podés pagar en efectivo o por transferencia. También usamos MercadoPago y Binance, pero ojo que esas plataformas suelen cobrar una comisión extra.",
+                    question4: "¿Cómo me preparo antes del turno?",
+                    answer4: "Cuidá tu piel: tomá agua, mantenela hidratada y evitá el alcohol por lo menos 24 horas antes. Dormí bien la noche anterior y no vengas en ayunas. ¡Todo esto ayuda a que la sesión sea más llevadera!",
+                    question5: "¿Puedo ver el diseño antes del turno?",
+                    answer5: "No mandamos los diseños por adelantado. Cada tatuaje es una obra original y queremos proteger el laburo del artista. Vas a poder verlo el mismo día de la sesión y, si querés ajustar algo, lo charlás en persona. Cambios grandes o ideas nuevas no se pueden hacer en el momento, así que mejor hablarlo con tiempo.",
+                    question6: "¿Qué pasa si tengo que cancelar?",
+                    answer6: "Si necesitás cancelar, avisanos con al menos una semana de anticipación y te devolvemos la seña. Si avisás con menos tiempo, lamentablemente el depósito no es reembolsable.",
+                    question7: "¿Puedo ir acompañado al estudio?",
+                    answer7: "Sabemos que a veces se necesita apoyo, pero el espacio es reducido y buscamos mantener un ambiente tranquilo. Si es imprescindible, podés venir con una sola persona. En lo posible, mejor vení solo/a.",
+                    question8: "¿Se puede tatuar sobre una cicatriz?",
+                    answer8: "Depende. Si la cicatriz es nueva, conviene esperar entre 12 y 18 meses. Siempre es buena idea que la vea tu médico antes. Tené en cuenta que la piel en esa zona es distinta y eso puede afectar cómo se ve y se cura el tatuaje.",
+                    question9: "¿Y si tengo alergias?",
+                    answer9: "Las alergias pueden aparecer por muchas razones, incluso si ya tenés tatuajes previos. Si sos alérgico o tenés antecedentes, contanos antes de la cita. Podemos decirte qué tintas usamos y ofrecerte una prueba por un costo mínimo, así podés hablarlo con tu médico.",
+                    question10: "¿Y si tengo tendencia a hacer queloides?",
+                    answer10: "En ese caso, lo primero es hablar con un dermatólogo. Si te da el ok, te podemos recomendar la técnica de handpoke, que es más suave para la piel y cicatriza mejor.",
+                    question11: "¿Puedo tatuarme si estoy bronceado/a?",
+                    answer11: "No lo recomendamos. La piel bronceada o quemada está más sensible y se descama, lo que puede afectar el resultado del tatuaje. Lo ideal es esperar a que la piel esté bien recuperada.",
+                    question12: "¿Puedo tatuarme un diseño que vi de otro artista?",
+                    answer12: "Por respeto al arte y al trabajo de otros/as tatuadores/as, evitamos copiar diseños ajenos. Si querés algo famoso o de inspiración, lo charlamos y vemos cómo adaptarlo con nuestro estilo propio.",
+                    question13: "¿Puedo usar crema anestésica antes de tatuarme?",
+                    answer13: "Preferimos que no. El dolor es una señal útil para saber cuándo parar. Además, esas cremas alteran la textura de la piel y pueden complicar el trabajo del artista. Mejor venir sin nada."
                 },
                 form: {
                     title: "Reserva tu turno",
@@ -91,8 +115,8 @@ i18next.init({
                     changes: "Giacotattooart se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.",
                     generatedBy: "Esta política de privacidad ha sido generada en politicadeprivacidadplantilla.com"
                 }
-            
-                
+
+
             }
         },
         en: {
@@ -116,16 +140,40 @@ i18next.init({
                 booking: {
                     title: "BOOKING",
                     beforeBooking: "Before booking",
-                    info1: "Most of your questions are likely already answered in our FAQ! Please fill out this form as accurately as possible, as we will use this information to create your quote and schedule your appointment.",
-                    info2: "Most of your questions are likely already answered in our FAQ! Please fill out this form as accurately as possible, as we will use this information to create your quote and schedule your appointment.",
-                    info3: "Most of your questions are likely already answered in our FAQ! Please fill out this form as accurately as possible, as we will use this information to create your quote and schedule your appointment.",
+                    info1: "You’ve probably found most of your answers in our FAQs! Now, please fill out this form as accurately as possible—this info is what we’ll use to prepare your quote and schedule your appointment.",
+                    info2: "Use a ruler to indicate the approximate size of the tattoo. Be very precise when describing your idea: objects, shapes, background, colors, style—every detail helps. Also attach reference images. Remember, we don’t replicate other tattoos: every design is 100% original!",
+                    info3: "Once you submit the form, we’ll get in touch via email/WhatsApp within 3–5 business days. You’ll receive an estimated quote and a suggested date and time. If that slot doesn’t work for you, let us know and we’ll find another option that fits your schedule.",
                     important: "Important: Don’t forget to check your spam folder!",
                     bookButton: "Book now"
                 },
                 faqs: {
-                    title: "FAQS",
-                    question1: "After having my appointment, what should I do?",
-                    answer1: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea in harum suscipit rerum laboriosam, aut eos quos odit pariatur facilis corrupti, impedit nulla cum quo quod voluptatum quis aspernatur?"
+                    title: "QUESTIONS",
+                    question1: "Do I have to be of legal age to get a tattoo?",
+                    answer1: "Yes, you must be at least 18 years old. We do not tattoo minors, even with parental permission or supervision.",
+                    question2: "Once I book my appointment, what’s next?",
+                    answer2: "If you’re happy with the quote and the date, the next step is to pay a 40% deposit of the total cost to confirm your appointment.",
+                    question3: "What payment methods do you accept?",
+                    answer3: "You can pay in cash or via bank transfer. We also accept MercadoPago and Binance, but keep in mind these platforms usually charge an extra fee.",
+                    question4: "How should I prepare before the session?",
+                    answer4: "Take care of your skin: drink plenty of water, keep it moisturized, and avoid alcohol for at least 24 hours before. Get a good night’s sleep and don’t come on an empty stomach. All this helps make the session smoother!",
+                    question5: "Can I see the design before the session?",
+                    answer5: "We don’t send designs in advance. Every tattoo is an original piece, and we protect the artist’s work. You’ll see the design on the day of your session, and if you want to tweak anything, you can discuss it in person. Major changes or new elements can’t be added last minute, so it’s best to plan ahead.",
+                    question6: "What happens if I need to cancel?",
+                    answer6: "If you need to cancel, let us know at least one week in advance and we’ll refund your deposit. If you cancel with less than a week’s notice, the deposit is non-refundable.",
+                    question7: "Can I bring someone with me to the studio?",
+                    answer7: "We get that you might want moral support, but our space is small and we aim to keep a calm atmosphere. If absolutely necessary, you can bring one person. Otherwise, it’s best to come alone.",
+                    question8: "Can I get a tattoo over a scar?",
+                    answer8: "It depends. If the scar is recent, it’s best to wait 12 to 18 months. Always have your doctor check it first. Remember, scar tissue is different from healthy skin and it can affect the look and healing of the tattoo.",
+                    question9: "What about allergies?",
+                    answer9: "Allergies can happen for many reasons, even if you’ve had tattoos before. If you have allergies or a history of reactions, let us know ahead of time. We can tell you which inks we use and offer a patch test for a small fee so you can consult your doctor.",
+                    question10: "What if I’m prone to keloids?",
+                    answer10: "In that case, consult a dermatologist first. If you get the green light, we recommend the handpoke technique, which is gentler on the skin and has a smoother healing process.",
+                    question11: "Can I get a tattoo if my skin is tanned?",
+                    answer11: "We don’t recommend it. Tanned or sunburned skin is more sensitive and peels, which can affect the tattoo. It’s best to wait until your skin is fully healed.",
+                    question12: "Can I get a tattoo of another artist’s design?",
+                    answer12: "Out of respect for the art and other tattooers, we avoid copying someone else’s work. If you want something famous or inspired, we can discuss adapting it in our own style.",
+                    question13: "Is it okay to use numbing cream before getting tattooed?",
+                    answer13: "We prefer you don’t. Pain is your body’s way of telling you when to take a break. Plus, numbing creams alter skin texture and can make it harder for the artist to work. Better to come without anything."
                 },
                 form: {
                     title: "Book your appointment",
