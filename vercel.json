@@ -1,8 +1,14 @@
 {
     "redirects": [
         {
-            "source": "giacotattooart.vercel.app",
-            "destination": "https://giacotattooart.vercel.app",
+            "source": "/:path*",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "giacotattooart.com"
+                }
+            ],
+            "destination": "https://www.giacotattooart.com/:path*",
             "permanent": true
         }
     ],

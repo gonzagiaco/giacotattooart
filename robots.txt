@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://giacotattooart.com/sitemap.xml
+Sitemap: https://www.giacotattooart.com/sitemap.xml
