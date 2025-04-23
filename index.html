@@ -8,7 +8,7 @@
         content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
 
     <title>Giacotattooart</title>
-    <link rel="stylesheet" href="css/minified/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -48,7 +48,9 @@
 
                 <!-- MENU -->
                 <header>
-                    <a class="header-logo" data-animacion="slide-right" href="#home">GIACOTATTOOART</a>
+                    <a class="header-logo" data-animacion="slide-right" href="#home"> <img src="media/logo.png"
+                            id="logo" data-animacion="fade-in" alt="forma abstracta circular">
+                    </a>
                     <label class="hamburger" data-animacion="slide-right">
                         <input type="checkbox">
                         <svg viewBox="0 0 32 32">
@@ -60,36 +62,45 @@
                     </label>
                 </header>
                 <nav class="desktop-nav">
+                    <div class="logo-container" data-animacion="slide-up">
+                        <img src="media/logo.png" id="resource2" data-animacion="fade-in"
+                            alt="forma abstracta circular">
+                    </div>
                     <ul data-animacion="slide-right">
                         <li><a href="/portfolio">Portfolio</a></li>
                         <li><a href="#booking" data-i18n="header.booking">Booking</a></li>
                         <li><a href="#faqs" data-i18n="header.faqs">Faqs</a></li>
                         <li><button href="javascript:void(0)" class="change-button"
-                                style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg" width="18px" height="18px"
-                                    alt="icono de cambio de idioma">
+                                style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
+                                    width="18px" height="18px" alt="icono de cambio de idioma">
                                 <span data-i18n="header.changeLanguage"> Change to Spanish</span>
-                        </button></li>
+                            </button></li>
                         <li id="menu-social">
-                            <a target="_blank" href="https://www.instagram.com/giacotattooart"><img width="32px" height="32px"
-                                    src="media/ig-black.svg" alt="Instagram"
+                            <a target="_blank" href="https://www.instagram.com/giacotattooart"><img width="32px"
+                                    height="32px" src="media/ig-black.svg" alt="Instagram"
                                     aria-label="Instagram de Giaco tattoo art"></a>
                         </li>
                     </ul>
                 </nav>
                 <!-- FIN MENU -->
                 <div class="hero" id="home">
-                    <img src="hero.webp" alt="Tatuador tatuando sentado" id="video-hero" data-animacion="fade-in" muted></video>
+                    <img src="hero.webp" alt="Tatuador tatuando sentado" id="video-hero" data-animacion="fade-in"
+                        muted></video>
 
                     <div id="hero-text">
-                        <p class="hero-logo" data-animacion="slide-left">GIACOTATTOOART</p>
+                        <div class="logo-container-hero" data-animacion="slide-up">
+                            <img src="media/logo.png" id="hero-logo" data-animacion="fade-in"
+                                alt="forma abstracta circular">
+                        </div>
 
                         <div class="hero-title-container" data-animacion="slide-left"
                             style="display: flex; align-items: center; gap: 10px; width: 100%; height: fit-content;">
-                            <h1><span data-i18n="hero.title" >Tattoo artist <br>
+                            <h1><span data-i18n="hero.title">Tattoo artist <br>
                                     based in Olavarría, Buenos Aires, <span class="mobile-break"></span></span> <span
                                     class="tablet-break"><br></span>
                                 Argentina
-                                <img src="media/argentina.webp" width="18px" height="11px" id="argentina" alt="bandera de argentina">
+                                <img src="media/argentina.webp" width="18px" height="11px" id="argentina"
+                                    alt="bandera de argentina">
 
                             </h1>
                         </div>
@@ -97,10 +108,11 @@
                     <div class="hero-btn-resource">
                         <a href="#booking" class="hero-btn" data-animacion="slide-left" data-i18n="hero.bookNow">Book
                             now</a>
-                        <img src="media/resource1.webp" id="resource1" data-animacion="fade-in" alt="forma abstracta circular">
+                        <img src="media/resource1.webp" id="resource1" data-animacion="fade-in"
+                            alt="forma abstracta circular">
                     </div>
                 </div>
-                <img src="media/resource3.webp" id="resource2" data-animacion="fade-in" alt="forma abstracta circular">
+
 
                 <div class="gallery">
                     <h2 data-animacion="slide-up" data-i18n="gallery.title">GALLERY</h2>
@@ -218,7 +230,8 @@
                     <p data-i18n="booking.important">Important: Don’t forget to check your spam folder!</p>
                 </div>
                 <button id="btn-book" data-animacion="slide-up"><span data-i18n="booking.bookButton">Book now
-                    </span><img src="media/arrow-right.svg" id="arrow-right" alt="icono de flecha apuntando a la derecha"></button>
+                    </span><img src="media/arrow-right.svg" id="arrow-right"
+                        alt="icono de flecha apuntando a la derecha"></button>
             </div>
         </div>
         <div class="container-faq" id="faqs">
@@ -542,7 +555,8 @@
                         <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"
                                 src="media/ig.svg" loading="lazy" alt="icono de instagram"></a>
                         <a target="_blank" href="https://www.tiktok.com/@giacotattoo"> <img src="media/tiktok.svg"
-                                loading="lazy" alt="icono de tiktok" alt="Tiktok" aria-label="Tiktok de Giaco tattoo art"></a>
+                                loading="lazy" alt="icono de tiktok" alt="Tiktok"
+                                aria-label="Tiktok de Giaco tattoo art"></a>
                         </a>
                     </div>
                 </div>
@@ -556,8 +570,9 @@
                     <li><a href="#booking" data-i18n="footer.bookAppointment">Book an appointment</a></li>
                     <li><a href="#faqs" data-i18n="header.faqs">Faqs</a></li>
                     <li><button href="javascript:void(0)" class="change-button"
-                            style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg" width="18px" height="18px"
-                                id="change-footer" alt=""><span data-i18n="header.changeLanguage"> Change to
+                            style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
+                                width="18px" height="18px" id="change-footer" alt=""><span
+                                data-i18n="header.changeLanguage"> Change to
                                 Spanish</span></button></li>
                 </ul>
             </nav>
