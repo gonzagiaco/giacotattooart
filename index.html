@@ -8,9 +8,11 @@
         content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
 
     <title>Giacotattooart</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/minified/style.min.css">
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preload" as="image" href="media/logo.png" type="image/png">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         integrity="sha384-9kDDKx/5+oRQIb/Ce7grsjaS0AWcNd9aPYY7ubOmUBUO3GovHz5BO0RliSAPq2S/" crossorigin="anonymous">
@@ -63,8 +65,8 @@
                 </header>
                 <nav class="desktop-nav">
                     <div class="logo-container" data-animacion="slide-up">
-                        <img src="media/logo.png" id="resource2" data-animacion="fade-in"
-                            alt="forma abstracta circular">
+                        <a href="#"><img src="media/logo.png" id="resource2" data-animacion="fade-in"
+                            alt="forma abstracta circular"></a>
                     </div>
                     <ul data-animacion="slide-right">
                         <li><a href="/portfolio">Portfolio</a></li>
@@ -88,10 +90,7 @@
                         muted></video>
 
                     <div id="hero-text">
-                        <div class="logo-container-hero" data-animacion="slide-up">
-                            <img src="media/logo.png" id="hero-logo" data-animacion="fade-in"
-                                alt="forma abstracta circular">
-                        </div>
+                        <p class="hero-logo" data-animacion="slide-left">GIACOTATTOOART</p>
 
                         <div class="hero-title-container" data-animacion="slide-left"
                             style="display: flex; align-items: center; gap: 10px; width: 100%; height: fit-content;">

@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Portfolio</title>
 
     <link rel="stylesheet" href="css/minified/style.min.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preload" as="image" href="media/logo.png" type="image/png">
 
     <meta name="description"
         content="Giacotattooart - Arte en piel. Tatuajes custom en Olavarría, BA. Realismo, blackwork y estilos únicos. Consultas abiertas. ✦">
@@ -23,7 +24,7 @@
         integrity="sha384-ZZ1pncU3bQe8y31yfZdMFdSpttDoPmOZg2wguVK9almUodir1PghgT0eY7Mrty8H"
         crossorigin="anonymous"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.0/i18next.min.js"
         integrity="sha384-/iazY8OPgIZI08niQIDVDUzsQRoIw2HBy8qIwvnY03pbo/Ekg/Iv4rQC7kWXaDXi"
         crossorigin="anonymous"></script>
 
@@ -40,7 +41,9 @@
 
     <!-- MENU -->
     <header id="portfolio-header">
-        <a class="header-logo" data-animacion="slide-left" href="/#home">GIACOTATTOOART</a>
+        <a class="header-logo" data-animacion="slide-right" href="#home"> <img src="media/logo.png" id="logo"
+                data-animacion="fade-in" alt="forma abstracta circular">
+        </a>
         <label class="hamburger" data-animacion="slide-left">
             <input type="checkbox">
             <svg viewBox="0 0 32 32">
@@ -53,8 +56,8 @@
     </header>
     <nav class="desktop-nav" id="desktop-nav-portfolio">
         <ul data-animacion="slide-right">
-            <li><a style="display: flex; align-items: center; gap: 5px;" href="/"><img width="18px"
-                        src="media/back.svg" alt="icono volver atras"><span data-i18n="header.back">Back</span></a></li>
+            <li><a style="display: flex; align-items: center; gap: 5px;" href="/"><img width="18px" src="media/back.svg"
+                        alt="icono volver atras"><span data-i18n="header.back">Back</span></a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="/#booking" data-i18n="header.booking">Booking</a></li>
             <li><a href="/#faqs" data-i18n="header.faqs">Faqs</a></li>
@@ -185,7 +188,8 @@
                         <a target="_blank" href="https://instagram.com/giacotattooart"><img style="margin-right: 15px;"
                                 src="media/ig.svg" loading="lazy" alt="icono de instagram"></a>
                         <a target="_blank" href="https://www.tiktok.com/@giacotattoo"> <img src="media/tiktok.svg"
-                                loading="lazy" alt="icono de tiktok" alt="Tiktok" aria-label="Tiktok de Giaco tattoo art"></a>
+                                loading="lazy" alt="icono de tiktok" alt="Tiktok"
+                                aria-label="Tiktok de Giaco tattoo art"></a>
                         </a>
                     </div>
                 </div>
@@ -200,7 +204,8 @@
                     <li><a href="/#faqs">Faqs</a></li>
                     <li><button href="javascript:void(0)" class="change-button"
                             style="display: flex; align-items: center; gap: 5px;"><img src="media/change.svg"
-                                id="change-footer" alt="icono de cambiar idioma"><span data-i18n="header.changeLanguage"> Change to
+                                id="change-footer" alt="icono de cambiar idioma"><span
+                                data-i18n="header.changeLanguage"> Change to
                                 Spanish</span></button></li>
                 </ul>
             </nav>

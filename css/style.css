@@ -71,7 +71,7 @@ header {
     display: flex;
     align-items: center;
     gap: 20%;
-    justify-content: start;
+    justify-content: center;
     margin-bottom: 10%;
 
 }
@@ -225,8 +225,9 @@ header {
     transform-origin: center center;
     /* Para que gire alrededor de su centro */
     /* Rotación continua */
-    transition: opacity 0.6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
     opacity: 0;
+    transform: translateX(-50px);
 }
 
 #resource1 {
@@ -245,6 +246,7 @@ header {
 
 #resource2.visible {
     opacity: 1;
+    transform: translateX(0);
 }
 
 @keyframes rotate {
@@ -1446,26 +1448,7 @@ select {
 
 @media screen and (max-width: 1132px) {
 
-    .logo-container-hero{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 5%;
-        transform: translateX(-50px);
-        opacity: 0;
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .logo-container-hero.visible{
-        opacity: 1;
-        transform: translateX(0);
-    }   
-
-    #hero-logo{
-        width: 150px;
-        filter: brightness(20%);
-    }
+   
 
     #btn-seeall {
         color: white;
